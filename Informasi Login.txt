@@ -1,0 +1,8 @@
+Admin
+
+user : admin
+pass : 12345678
+
+Guru
+user : guruguru
+pass : 12345678
