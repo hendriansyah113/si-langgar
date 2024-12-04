@@ -1410,3 +1410,153 @@ FROM `tb_guru`
 WHERE `id` = '87654321'
 ERROR - 2024-12-04 15:42:26 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
 ERROR - 2024-12-04 15:42:26 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:43:15 --> Query error: Unknown column 'id' in 'order clause' - Invalid query: SELECT *
+FROM `tb_guru`
+WHERE `nik` LIKE '%%' ESCAPE '!'
+ORDER BY `id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 45
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 48
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 45
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 48
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 45
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 48
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 45
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 48
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 45
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 48
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 45
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 48
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 63
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 74
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 77
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 82
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 63
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 74
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 77
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 82
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 63
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 74
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 77
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 82
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 63
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 74
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 77
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 82
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 63
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 74
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 77
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 82
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 63
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 74
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 77
+ERROR - 2024-12-04 15:47:24 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 82
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 51
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 54
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 51
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 54
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 51
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 54
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 51
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 54
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 51
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 54
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 51
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 54
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 69
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 90
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 69
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 90
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 69
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 90
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 69
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 90
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 69
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 90
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 69
+ERROR - 2024-12-04 15:47:52 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 90
+ERROR - 2024-12-04 15:49:02 --> Query error: Unknown column 'teacher_name' in 'field list' - Invalid query: INSERT INTO `tb_guru` (`nik`, `teacher_name`, `subject`) VALUES ('112123', 'yosef', 'matematika')
+ERROR - 2024-12-04 15:50:20 --> Query error: Unknown column 'subject' in 'field list' - Invalid query: INSERT INTO `tb_guru` (`nik`, `nama_guru`, `subject`) VALUES ('112123', 'yosef', 'matematika')
+ERROR - 2024-12-04 15:50:26 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:50:26 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:50:26 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:50:26 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:50:26 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:50:26 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\list-guru.php 49
+ERROR - 2024-12-04 15:50:59 --> Query error: Unknown column 'subject' in 'field list' - Invalid query: INSERT INTO `tb_guru` (`nik`, `nama_guru`, `subject`) VALUES ('112123', 'yosef', 'matematika')
+ERROR - 2024-12-04 17:24:00 --> Query error: Unknown column 'id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_guru`
+WHERE `id` = '112123'
+ERROR - 2024-12-04 17:24:29 --> Severity: Notice --> Undefined property: Guru::$nisn C:\xampp\htdocs\si-langgar\system\core\Model.php 73
+ERROR - 2024-12-04 17:24:29 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '112123'' at line 3 - Invalid query: SELECT *
+FROM `tb_guru`
+WHERE  = '112123'
+ERROR - 2024-12-04 17:25:00 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\guru\edit.php 24
+ERROR - 2024-12-04 17:25:00 --> Severity: Notice --> Undefined property: stdClass::$subject C:\xampp\htdocs\si-langgar\application\views\admin\guru\edit.php 28
+ERROR - 2024-12-04 17:25:40 --> Query error: Unknown column 'class_name' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kelas`
+WHERE `class_name` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 17:25:50 --> Query error: Unknown column 'id' in 'where clause' - Invalid query: UPDATE `tb_guru` SET `nik` = '334242', `teacher_name` = 'yosef', `subject` = 'matematika'
+WHERE `id` = '112123'
+ERROR - 2024-12-04 17:26:29 --> Query error: Unknown column 'id' in 'where clause' - Invalid query: UPDATE `tb_guru` SET `nik` = '334242', `nama_guru` = 'yosef', `mata_pelajaran` = 'matematika'
+WHERE `id` = '112123'
+ERROR - 2024-12-04 17:27:51 --> Query error: Duplicate entry '334242' for key 'PRIMARY' - Invalid query: UPDATE `tb_guru` SET `nik` = '334242', `nama_guru` = 'yosef', `mata_pelajaran` = 'matematika'
+WHERE `nik` = '112123'
+ERROR - 2024-12-04 17:28:44 --> Query error: Unknown column 'teacher_id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE `teacher_id` = '112123'
+ERROR - 2024-12-04 17:29:22 --> Query error: Unknown column 'teacher_id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE `teacher_id` = '112123'
+ERROR - 2024-12-04 17:30:22 --> Query error: Unknown column 'teacher_id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE `teacher_id` = '112123'
+ERROR - 2024-12-04 17:31:09 --> Query error: Unknown column 'teacher_id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE `teacher_id` IS NULL
+ERROR - 2024-12-04 17:32:28 --> Severity: Notice --> Undefined property: Guru::$id_pelanggaran C:\xampp\htdocs\si-langgar\system\core\Model.php 73
+ERROR - 2024-12-04 17:32:28 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 3 - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE  IS NULL
+ERROR - 2024-12-04 17:33:13 --> Severity: Notice --> Undefined property: Guru::$id_pelanggaran C:\xampp\htdocs\si-langgar\system\core\Model.php 73
+ERROR - 2024-12-04 17:33:13 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 3 - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE  IS NULL
+ERROR - 2024-12-04 17:33:40 --> Severity: Notice --> Undefined property: Guru::$id_pelanggaran C:\xampp\htdocs\si-langgar\system\core\Model.php 73
+ERROR - 2024-12-04 17:33:40 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 3 - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE  IS NULL
+ERROR - 2024-12-04 17:34:20 --> Severity: Notice --> Undefined property: Guru::$id_pelanggaran C:\xampp\htdocs\si-langgar\system\core\Model.php 73
+ERROR - 2024-12-04 17:34:20 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 3 - Invalid query: SELECT *
+FROM `tb_pelanggaran`
+WHERE  IS NULL
+ERROR - 2024-12-04 17:35:44 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:35:45 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:35:45 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:43 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:37:43 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:43 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:51 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:37:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:54 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:37:54 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:54 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:58 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:37:58 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:37:58 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:39:10 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:39:10 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:39:10 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:39:14 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 17:39:14 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:39:14 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 17:39:19 --> Query error: Unknown column 'class_name' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kelas`
+WHERE `class_name` LIKE '%%' ESCAPE '!'
