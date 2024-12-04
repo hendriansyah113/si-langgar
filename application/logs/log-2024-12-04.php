@@ -1198,3 +1198,215 @@ JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
 JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`type_id`
 JOIN `tb_siswa` ON `tb_siswa`.`id` = `tb_kebaikan`.`student_id`
 WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 11:57:39 --> Query error: Unknown column 'tb_guru.id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`id` = `tb_kebaikan`.`teacher_id`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`type_id`
+JOIN `tb_siswa` ON `tb_siswa`.`id` = `tb_kebaikan`.`student_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 11:58:41 --> Query error: Unknown column 'tb_guru.id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`id` = `tb_kebaikan`.`teacher_id`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`type_id`
+JOIN `tb_siswa` ON `tb_siswa`.`id` = `tb_kebaikan`.`student_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 11:59:41 --> Query error: Unknown column 'tb_kebaikan.type_id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`nik` = `tb_kebaikan`.`nik`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`type_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 12:00:02 --> Query error: Unknown column 'tb_siswa.id' in 'field list' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`id` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`wali_name`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`id` = `tb_kebaikan`.`teacher_id`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 12:00:16 --> Query error: Unknown column 'kelas.wali_name' in 'field list' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`wali_name`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`id` = `tb_kebaikan`.`teacher_id`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 12:00:28 --> Query error: Unknown column 'guru.id' in 'on clause' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`nama_wali`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`id` = `tb_kebaikan`.`teacher_id`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 12:00:39 --> Query error: Unknown column 'tb_kebaikan.teacher_id' in 'on clause' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`nama_wali`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`teacher_id`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 47
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 57
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 61
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 47
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 57
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 61
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 47
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 57
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 61
+ERROR - 2024-12-04 12:01:17 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 47
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 57
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 61
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 47
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 57
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 61
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 47
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 56
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 57
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 61
+ERROR - 2024-12-04 12:02:23 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined variable: poin C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 51
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 65
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined variable: poin C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 51
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 65
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined variable: poin C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 51
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 65
+ERROR - 2024-12-04 12:02:59 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 65
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 65
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 60
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 62
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 65
+ERROR - 2024-12-04 12:03:20 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:03:55 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:03:55 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 12:03:55 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\admin\list-kebaikan.php 68
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:31:34 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:32:53 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\add.php 51
+ERROR - 2024-12-04 15:33:28 --> Query error: Unknown column 'id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_guru`
+WHERE `id` = '43215678'
+ERROR - 2024-12-04 15:34:45 --> Severity: Notice --> Trying to access array offset on value of type null C:\xampp\htdocs\si-langgar\application\controllers\Kebaikan.php 109
+ERROR - 2024-12-04 15:34:45 --> Query error: Column 'wali_id' cannot be null - Invalid query: INSERT INTO `tb_kebaikan` (`nisn`, `class_id`, `nik`, `wali_id`, `tipe_id`, `catatan`, `poin`, `tanggal_lapor`) VALUES ('4151', '3', '43215678', NULL, '1', 'baik', '25', '2024-12-04')
+ERROR - 2024-12-04 15:35:49 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`si_langgar`.`tb_kebaikan`, CONSTRAINT `fk_tb_kebaikan` FOREIGN KEY (`id`) REFERENCES `tb_tipe_kebaikan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) - Invalid query: INSERT INTO `tb_kebaikan` (`nisn`, `class_id`, `nik`, `wali_id`, `tipe_id`, `catatan`, `poin`, `tanggal_lapor`) VALUES ('7611', '4', '43215678', '8', '3', 'm', '20', '2024-12-04')
+ERROR - 2024-12-04 15:38:21 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 15:38:22 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:22 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:32 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 15:38:33 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:33 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:43 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 15:38:43 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:43 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:53 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 15:38:54 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:38:54 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 36
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$student_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 44
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 44
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$teacher_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 50
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 50
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 51
+ERROR - 2024-12-04 15:39:21 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 51
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$type_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 59
+ERROR - 2024-12-04 15:39:21 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 67
+ERROR - 2024-12-04 15:40:30 --> Severity: Notice --> Undefined property: stdClass::$student_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 47
+ERROR - 2024-12-04 15:40:30 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:40:30 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:40:30 --> Severity: Notice --> Undefined property: stdClass::$type_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 64
+ERROR - 2024-12-04 15:40:49 --> Severity: Notice --> Undefined property: stdClass::$student_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 47
+ERROR - 2024-12-04 15:40:49 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:40:49 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:40:49 --> Severity: Notice --> Undefined property: stdClass::$type_id C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 64
+ERROR - 2024-12-04 15:41:11 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:41:11 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:41:16 --> Query error: Unknown column 'id' in 'where clause' - Invalid query: SELECT *
+FROM `tb_guru`
+WHERE `id` = '87654321'
+ERROR - 2024-12-04 15:42:26 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56
+ERROR - 2024-12-04 15:42:26 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\admin\kebaikan\edit.php 56

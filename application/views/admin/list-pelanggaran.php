@@ -36,6 +36,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <tr>
                   <th>No</th>
                   <th>Nama Siswa</th>
+                  <th>NISN</th>
                   <th>Dilaporkan oleh</th>
                   <th>Wali Kelas</th>
                   <th>Tipe Pelanggaran</th>
@@ -59,6 +60,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <td><?php echo $no++ ?></td>
                     <td><strong><?php echo $row->nama_siswa ?></strong> (<?php echo $row->nama_kelas ?>)
                     </td>
+                    <td><?php echo $row->nisn ?></td>
                     <td><?php echo $row->nama_guru ?></td>
                     <td><?php echo isset($row->nama_wali) ? $row->nama_wali : 'N/A'; ?></td>
                     <td><?php echo $row->nama_pelanggaran ?></td>

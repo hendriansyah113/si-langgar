@@ -54,7 +54,7 @@ class Kebaikan extends MY_Controller
                 $data['list'] = $this->Kebaikan_model->DataKebaikan($config['per_page'], $data['uri'], ['tb_siswa.nisn' => $keyword]);
                 $data['page'] = 'List Kebaikan';
                 $data['login'] = $this->data_user();
-                $data['point'] = $this->db->get_where('tb_website', ['id' => '1'])->row('point');
+                $data['poin'] = $this->db->get_where('tb_website', ['id' => '1'])->row('poin');
                 $data['total_rows'] = $config['total_rows'];
                 $data['pagination'] = $this->pagination->create_links();
                 $data['is_kepala_sekolah'] = $this->data_user()->level == 'Kepala Sekolah';
@@ -86,11 +86,11 @@ class Kebaikan extends MY_Controller
 
                                 // Lakukan pengecekan data yang diperlukan
                                 // Misalnya, pastikan kelas, siswa, pelapor, dan kategori ada dalam database
-                                $data_guru = db_query('tb_guru', array('id' => $post_pelapor));
+                                $data_guru = db_query('tb_guru', array('nik' => $post_pelapor));
                                 $data_kelas = db_query('tb_kelas', array('id' => $post_kelas));
-                                $data_siswa = db_query('tb_siswa', array('id' => $post_siswa));
+                                $data_siswa = db_query('tb_siswa', array('nisn' => $post_siswa));
                                 $data_kategori = db_query('tb_tipe_kebaikan', array('id' => $post_kategori));
-                                $data_wali = db_query('tb_wali', array('id' => $post_siswa));
+                                $data_wali = db_query('tb_wali', array('nisn' => $post_siswa));
 
                                 if ($data_kelas['count'] == 0) {
                                         $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal', 'msg' => 'Data Kelas Tidak Tersedia']);
@@ -104,14 +104,13 @@ class Kebaikan extends MY_Controller
                                         // Semua data tersedia, lakukan penambahan data ke tabel
                                         $data = [
                                                 'nisn' => $data_siswa['rows']['nisn'],
-                                                'student_id' => $data_siswa['rows']['id'],
                                                 'class_id' => $data_kelas['rows']['id'],
-                                                'teacher_id' => $data_guru['rows']['id'],
+                                                'nik' => $data_guru['rows']['nik'],
                                                 'wali_id' => $data_wali['rows']['id'],
-                                                'type_id' => $data_kategori['rows']['id'],
-                                                'note' => $post_catatan,
-                                                'point' => $data_kategori['rows']['poin_kebaikan'],
-                                                'reported_on' => date('Y-m-d')
+                                                'tipe_id' => $data_kategori['rows']['id'],
+                                                'catatan' => $post_catatan,
+                                                'poin' => $data_kategori['rows']['poin_kebaikan'],
+                                                'tanggal_lapor' => date('Y-m-d')
                                         ];
                                         $insert = $this->Kebaikan_model->insert($data);
                                         if ($insert == true) {
@@ -183,22 +182,21 @@ class Kebaikan extends MY_Controller
                                         redirect('kebaikan/edit/' . $id);
                                 }
 
-                                $data_guru = db_query('tb_guru', array('id' => $post_pelapor));
+                                $data_guru = db_query('tb_guru', array('nik' => $post_pelapor));
                                 $data_kelas = db_query('tb_kelas', array('id' => $post_kelas));
-                                $data_siswa = db_query('tb_siswa', array('id' => $post_siswa));
+                                $data_siswa = db_query('tb_siswa', array('nisn' => $post_siswa));
                                 $data_kategori = db_query('tb_tipe_kebaikan', array('id' => $post_kategori));
-                                $data_wali = db_query('tb_wali', array('id' => $post_siswa));
+                                $data_wali = db_query('tb_wali', array('nisn' => $post_siswa));
 
                                 $data = [
                                         'nisn' => $data_siswa['rows']['nisn'],
-                                        'student_id' => $data_siswa['rows']['id'],
                                         'class_id' => $data_kelas['rows']['id'],
-                                        'teacher_id' => $data_guru['rows']['id'],
+                                        'nik' => $data_guru['rows']['nik'],
                                         'wali_id' => $data_wali['rows']['id'],
-                                        'type_id' => $data_kategori['rows']['id'],
-                                        'note' => $post_catatan,
-                                        'point' => $data_kategori['rows']['get_point'],
-                                        'reported_on' => date('Y-m-d H:i:s')
+                                        'tipe_id' => $data_kategori['rows']['id'],
+                                        'catatan' => $post_catatan,
+                                        'poin' => $data_kategori['rows']['poin_kebaikan'],
+                                        'tanggal_lapor' => date('Y-m-d H:i:s')
                                 ];
                                 $update = $this->Kebaikan_model->update($data, $this->db->escape_str(filter($id, true)));
 
