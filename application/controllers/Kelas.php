@@ -16,7 +16,7 @@ class Kelas extends MY_Controller
                 $keyword = $this->db->escape_str(filter($this->input->get('search', true)));
                 $config['per_page'] = 20;  //show record per halaman
                 $config['base_url'] = site_url('kelas/index');
-                $config['total_rows'] = $this->Kelas_model->TotalDataKelas(['class_name' => $keyword]);
+                $config['total_rows'] = $this->Kelas_model->TotalDataKelas(['nama_kelas' => $keyword]);
                 $per_page = $config['per_page'];
                 $config['uri_segment'] = 3;  // uri parameter
                 $choice = $config['total_rows'] / $per_page;
@@ -50,7 +50,7 @@ class Kelas extends MY_Controller
 
                 $this->pagination->initialize($config);
                 $data['uri'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-                $data['list'] = $this->Kelas_model->DataKelas($config['per_page'], $data['uri'], ['class_name' => $keyword]);
+                $data['list'] = $this->Kelas_model->DataKelas($config['per_page'], $data['uri'], ['nama_kelas' => $keyword]);
                 $data['page'] = 'List Kelas';
                 $data['login'] = $this->data_user();
                 $data['total_rows'] = $config['total_rows'];
@@ -81,10 +81,10 @@ class Kelas extends MY_Controller
                                         $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal', 'msg' => 'Data Guru Tidak Tersedia']);
                                 } else {
                                         $data = [
-                                                'wali_name' => $row_guru->teacher_name,
-                                                'class_name' => $post_nama_kelas,
+                                                'wali_kelas' => $row_guru->nama_guru,
+                                                'nama_kelas' => $post_nama_kelas,
                                                 'sub_class' => $post_kelas,
-                                                'total_students' => $post_total_siswa
+                                                'total_siswa' => $post_total_siswa
                                         ];
                                         $insert = $this->Kelas_model->insert($data);
                                         if ($insert == true) {
@@ -136,10 +136,10 @@ class Kelas extends MY_Controller
                                 $row_guru = $data_guru->row();
 
                                 $update_post = [
-                                        'wali_name' => $row_guru->teacher_name,
-                                        'class_name' => $post_nama_kelas,
+                                        'wali_kelas' => $row_guru->nama_guru,
+                                        'nama_kelas' => $post_nama_kelas,
                                         'sub_class' => $post_kelas,
-                                        'total_students' => $post_total_siswa
+                                        'total_siswa' => $post_total_siswa
                                 ];
                                 $update = $this->Kelas_model->update($update_post, $this->db->escape_str(filter($id, true)));
                                 if ($update == true) {

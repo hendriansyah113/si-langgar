@@ -1560,3 +1560,108 @@ ERROR - 2024-12-04 17:39:14 --> 404 Page Not Found: Assets/js
 ERROR - 2024-12-04 17:39:19 --> Query error: Unknown column 'class_name' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
 FROM `tb_kelas`
 WHERE `class_name` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:13:22 --> Query error: Unknown column 'class_name' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kelas`
+WHERE `class_name` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:14:02 --> Query error: Unknown column 'class_name' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kelas`
+WHERE `class_name` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 44
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 45
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 46
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 44
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 45
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 46
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 44
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 45
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 46
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 44
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 45
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 46
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 44
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 45
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 46
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 44
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 45
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 46
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 74
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 77
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 74
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 77
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 74
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 77
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 74
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 77
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 74
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 77
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 74
+ERROR - 2024-12-04 18:14:35 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kelas.php 77
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:16:23 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\add.php 36
+ERROR - 2024-12-04 18:17:30 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 84
+ERROR - 2024-12-04 18:17:30 --> Query error: Unknown column 'wali_name' in 'field list' - Invalid query: INSERT INTO `tb_kelas` (`wali_name`, `nama_kelas`, `sub_class`, `total_students`) VALUES (NULL, 'XII - Busana', 'XI', '10')
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 29
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$wali_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 34
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:18:50 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 43
+ERROR - 2024-12-04 18:19:36 --> Severity: Notice --> Undefined property: stdClass::$nik C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 36
+ERROR - 2024-12-04 18:19:36 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 46
+ERROR - 2024-12-04 18:19:54 --> Severity: Notice --> Undefined property: stdClass::$total_students C:\xampp\htdocs\si-langgar\application\views\admin\kelas\edit.php 46
+ERROR - 2024-12-04 18:20:10 --> Severity: Notice --> Trying to get property 'teacher_name' of non-object C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 139
+ERROR - 2024-12-04 18:20:10 --> Query error: Unknown column 'wali_name' in 'field list' - Invalid query: UPDATE `tb_kelas` SET `wali_name` = NULL, `nama_kelas` = 'XII - Mesin', `sub_class` = 'XII', `total_students` = '10'
+WHERE `id` = '8'
+ERROR - 2024-12-04 18:20:38 --> Severity: Notice --> Trying to get property 'nama_guru' of non-object C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 139
+ERROR - 2024-12-04 18:21:08 --> Query error: Cannot delete or update a parent row: a foreign key constraint fails (`si_langgar`.`tb_pelanggaran`, CONSTRAINT `fk_tb_pelanggaran_kelas` FOREIGN KEY (`class_id`) REFERENCES `tb_kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) - Invalid query: DELETE FROM `tb_kelas`
+WHERE `id` = '8'
+ERROR - 2024-12-04 18:22:30 --> Query error: Unknown column 'kelas.nama_wali' in 'field list' - Invalid query: SELECT `tb_pelanggaran`.*, `tb_siswa`.`nisn` as `violation_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`nama_wali`, `tipe_pelanggaran`.`nama_pelanggaran`
+FROM `tb_pelanggaran`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_pelanggaran`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_pelanggaran`.`wali_id`
+LEFT JOIN `tb_tipe_pelanggaran` `tipe_pelanggaran` ON `tipe_pelanggaran`.`id` = `tb_pelanggaran`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_pelanggaran`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 18:22:40 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:22:47 --> Query error: Unknown column 'kelas.nama_wali' in 'field list' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`nama_wali`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
