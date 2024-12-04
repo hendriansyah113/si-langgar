@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-    <?php echo $DataWebsite->school_name ?> - <?php echo $page ?>
+    <?php echo $DataWebsite->nama_sekolah ?> - <?php echo $page ?>
   </title>
   <!-- Favicon -->
   <link href="<?php echo base_url() ?>assets/img/brand/favicon.png" rel="icon" type="image/png">
@@ -16,7 +16,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
   <link href="<?php echo base_url() ?>assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-  <link href="<?php echo base_url() ?>assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <link href="<?php echo base_url() ?>assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"
+    rel="stylesheet" />
   <!-- CSS Files -->
   <link href="<?php echo base_url() ?>assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
 </head>
@@ -27,9 +28,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
       <div class="container px-4">
         <a class="navbar-brand" href="<?php echo base_url() ?>">
-          <h2 class="text-white"><?php echo $DataWebsite->school_name ?></h2>
+          <h2 class="text-white"><?php echo $DataWebsite->nama_sekolah ?></h2>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
@@ -42,7 +44,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </a>
               </div>
               <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <button type="button" class="navbar-toggler" data-toggle="collapse"
+                  data-target="#navbar-collapse-main" aria-controls="sidenav-main"
+                  aria-expanded="false" aria-label="Toggle sidenav">
                   <span></span>
                   <span></span>
                 </button>

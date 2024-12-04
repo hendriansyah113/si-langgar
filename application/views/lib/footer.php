@@ -4,9 +4,9 @@
     <div class="row align-items-center justify-content-xl-between">
         <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
-                <?php echo $DataWebsite->school_name; ?> &copy; <?php echo date('Y'); ?> 
-                <b>Crafted With <i class="fas fa-heart text-danger"></i></b> 
-                By 
+                <?php echo $DataWebsite->nama_sekolah; ?> &copy; <?php echo date('Y'); ?>
+                <b>Crafted With <i class="fas fa-heart text-danger"></i></b>
+                By
                 <a href="https://kanghl.web.id" class="font-weight-bold ml-1" target="_blank">
                     <b>SMA Negeri 1 Kuala Pambuang</b>
                 </a>
@@ -41,4 +41,5 @@
     });
 </script>
 </body>
+
 </html>
