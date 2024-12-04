@@ -1,32 +1,35 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kategori_pelanggaran extends MY_Controller {
+class Kategori_pelanggaran extends MY_Controller
+{
 
-    function __construct(){
-        parent::__construct();   
+    function __construct()
+    {
+        parent::__construct();
         $this->session('Admin');
         $this->load->model(array('Kategoripelanggaran_model', 'Main_model'));
     }
-// ==== Kategori Pelanggaran ==== //
-public function index(){
+    // ==== Kategori Pelanggaran ==== //
+    public function index()
+    {
         $keyword = $this->input->get('search', true); // Tidak perlu lagi menggunakan fungsi filter di sini
         $keyword = $this->db->escape_str($keyword); // Sekarang kita escape string setelah mendapatkan nilai dari input
-        
+
         $config['per_page'] = 20;  //show record per halaman
         $config['base_url'] = site_url('kategori_pelanggaran/index');
-        $config['total_rows'] = $this->Kategoripelanggaran_model->TotalDataKategoriPelanggaran(['violation_name' => $keyword]);  
+        $config['total_rows'] = $this->Kategoripelanggaran_model->TotalDataKategoriPelanggaran(['nama_pelanggaran' => $keyword]);
         $per_page = $config['per_page'];
         $config['uri_segment'] = 3;  // uri parameter
         $choice = $config['total_rows'] / $per_page;
         $config['num_links'] = 2;
-        
+
         if ($keyword <> '') {
             $config['suffix'] = '?' . http_build_query($_GET, '', "&");
         } else if (http_build_query($_GET, '', "&")) {
-            $config['suffix'] = '?' . http_build_query($_GET, '', "&"); 
+            $config['suffix'] = '?' . http_build_query($_GET, '', "&");
         } else {
-            $config['suffix'] = '' . http_build_query($_GET, '', "&");    
+            $config['suffix'] = '' . http_build_query($_GET, '', "&");
         }
 
         // Membuat Style pagination untuk BootStrap v4
@@ -48,10 +51,10 @@ public function index(){
         $config['first_tagl_close'] = '</span></li>';
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
- 
+
         $this->pagination->initialize($config);
         $data['uri'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data['list'] = $this->Kategoripelanggaran_model->DataKategoriPelanggaran($config['per_page'], $data['uri'], ['violation_name' => $keyword]);
+        $data['list'] = $this->Kategoripelanggaran_model->DataKategoriPelanggaran($config['per_page'], $data['uri'], ['nama_pelanggaran' => $keyword]);
         $data['page'] = 'List Kategori Pelanggaran';
         $data['login'] = $this->data_user();
         $data['total_rows'] = $config['total_rows'];
@@ -59,98 +62,97 @@ public function index(){
         $this->template_admin('admin/list-kategori-pelanggaran', $data);
     }
 
-        public function tambah(){
-            log_message('debug', 'Kategori pelanggaran tambah dipanggil');
-            echo 'Kategori pelanggaran tambah dipanggil';
-            if (count($this->uri->segment_array()) > 2) {
-                redirect('admin');
-            }            
-                if (count($this->input->post())) {
-                    if ($this->form_validation('kategori-pelanggaran') == true) { 
-                        $post_name = $this->db->escape_str($this->input->post('name', true));
-                        $post_point = $this->db->escape_str($this->input->post('point', true));
+    public function tambah()
+    {
+        if (count($this->uri->segment_array()) > 2) {
+            redirect('admin');
+        }
+        if (count($this->input->post())) {
+            if ($this->form_validation('kategori-pelanggaran') == true) {
+                $post_name = $this->db->escape_str($this->input->post('name', true));
+                $post_point = $this->db->escape_str($this->input->post('point', true));
 
 
-                                $data = [
-                                        'violation_name' => $post_name,
-                                        'get_point' => $post_point
-                                        ];   
-                                $insert = $this->Kategoripelanggaran_model->insert($data);
-                                if ($insert == true) {
-                                        $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil', 'msg' => 'Data Baru Berhasil Ditambahkan']);
-                                        redirect('kategori_pelanggaran'); // Redirect ke halaman kategori pelanggaran setelah berhasil menambah data
-                                } else {
-                                        $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal', 'msg' => 'Terjadi Kesalahan']);
-                                }
-                    }
-                } 
-                $data['login'] = $this->data_user();
-                $data['page'] = 'Tambah Kategori Pelanggaran';
-                $this->template_admin('admin/kategori-pelanggaran/add', $data);                
-        } 
+                $data = [
+                    'nama_pelanggaran' => $post_name,
+                    'poin_pelanggaran' => $post_point
+                ];
+                $insert = $this->Kategoripelanggaran_model->insert($data);
+                if ($insert == true) {
+                    $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil', 'msg' => 'Data Baru Berhasil Ditambahkan']);
+                    redirect('kategori_pelanggaran'); // Redirect ke halaman kategori pelanggaran setelah berhasil menambah data
+                } else {
+                    $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal', 'msg' => 'Terjadi Kesalahan']);
+                }
+            }
+        }
+        $data['login'] = $this->data_user();
+        $data['page'] = 'Tambah Kategori Pelanggaran';
+        $this->template_admin('admin/kategori-pelanggaran/add', $data);
+    }
 
-        public function edit($id = null){
-            if (count($this->uri->segment_array()) > 3) {
-                redirect('admin');
-            } 
-                if (!isset($id)) {
-                $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
-                redirect('kategori-pelanggaran');
-                } 
+    public function edit($id = null)
+    {
+        if (count($this->uri->segment_array()) > 3) {
+            redirect('admin');
+        }
+        if (!isset($id)) {
+            $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
+            redirect('kategori-pelanggaran');
+        }
 
-                if (!is_numeric($id)) {
-                $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
-                redirect('kategori-pelanggaran');
-                } 
-                $data_kategori_pelanggaran = $this->Kategoripelanggaran_model->getByID($this->db->escape_str(filter($id, true)));   
+        if (!is_numeric($id)) {
+            $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
+            redirect('kategori-pelanggaran');
+        }
+        $data_kategori_pelanggaran = $this->Kategoripelanggaran_model->getByID($this->db->escape_str(filter($id, true)));
 
-                if ($data_kategori_pelanggaran->num_rows() == 0) {
-                    $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
+        if ($data_kategori_pelanggaran->num_rows() == 0) {
+            $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
+            redirect('kategori-pelanggaran');
+        }
+        if (count($this->input->post())) {
+            if ($this->form_validation('kategori-pelanggaran') == true) {
+                $post_name = $this->db->escape_str($this->input->post('name', true));
+                $post_point = $this->db->escape_str($this->input->post('point', true));
+
+                $update_post = [
+                    'nama_pelanggaran' => $post_name,
+                    'poin_pelanggaran' => $post_point
+                ];
+                $update = $this->Kategoripelanggaran_model->update($update_post, $this->db->escape_str(filter($id, true)));
+                if ($update == true) {
+                    $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil!', 'msg' => 'Data Berhasil Di Ubah.']);
                     redirect('kategori-pelanggaran');
-                }   
-                if (count($this->input->post())) {
-                    if ($this->form_validation('kategori-pelanggaran') == true) { 
-                        $post_name = $this->db->escape_str($this->input->post('name', true));
-                        $post_point = $this->db->escape_str($this->input->post('point', true));
-                                        
-                                $update_post = [
-                                        'violation_name' => $post_name,
-                                        'get_point' => $post_point
-                                        ];  
-                                $update = $this->Kategoripelanggaran_model->update($update_post, $this->db->escape_str(filter($id, true)));
-                                if ($update == true) {
-                                        $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil!', 'msg' => 'Data Berhasil Di Ubah.']);
-                                        redirect('kategori-pelanggaran');
-                                } else {
-                                        $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Terjadi Kesalahan.']);
-                                }
-                        }
+                } else {
+                    $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Terjadi Kesalahan.']);
                 }
-                $data['tipe_pelanggaran'] = $data_kategori_pelanggaran->row();
-                $data['page'] = 'Edit Guru';
-                $data['login'] = $this->data_user();
-                $this->template_admin('admin/kategori-pelanggaran/edit', $data);
-        }               
+            }
+        }
+        $data['tipe_pelanggaran'] = $data_kategori_pelanggaran->row();
+        $data['page'] = 'Edit Guru';
+        $data['login'] = $this->data_user();
+        $this->template_admin('admin/kategori-pelanggaran/edit', $data);
+    }
 
-        public function hapus(){   
-                if (count($this->input->post())) {
-                $post_id = $this->input->post($this->db->escape_str(filter('id', true)));
-                $data_kategori_pelanggaran = $this->Kategoripelanggaran_model->getByID($post_id);   
-                        if ($data_kategori_pelanggaran->num_rows() == 0) {
-                        $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
-                        redirect('kategori-pelanggaran');
-                        } else {
-                        $delete = $this->Kategoripelanggaran_model->delete($post_id);
-                                if ($delete == true) {
-                                   $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil!', 'msg' => 'Data Berhasil Di Hapus.']);
-                                   redirect('kategori-pelanggaran');
-                                } else {
-                                   $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Terjadi Kesalahan.']);
-                                   redirect('kategori-pelanggaran');
-
-                                }
-                        }
+    public function hapus()
+    {
+        if (count($this->input->post())) {
+            $post_id = $this->input->post($this->db->escape_str(filter('id', true)));
+            $data_kategori_pelanggaran = $this->Kategoripelanggaran_model->getByID($post_id);
+            if ($data_kategori_pelanggaran->num_rows() == 0) {
+                $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
+                redirect('kategori-pelanggaran');
+            } else {
+                $delete = $this->Kategoripelanggaran_model->delete($post_id);
+                if ($delete == true) {
+                    $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil!', 'msg' => 'Data Berhasil Di Hapus.']);
+                    redirect('kategori-pelanggaran');
+                } else {
+                    $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Terjadi Kesalahan.']);
+                    redirect('kategori-pelanggaran');
                 }
-        }               
-
+            }
+        }
+    }
 }

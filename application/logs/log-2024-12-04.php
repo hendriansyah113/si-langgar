@@ -215,3 +215,69 @@ ERROR - 2024-12-04 07:11:47 --> Severity: Notice --> Undefined property: stdClas
 ERROR - 2024-12-04 07:11:47 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\search.php 81
 ERROR - 2024-12-04 07:11:54 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\search.php 80
 ERROR - 2024-12-04 07:11:54 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\views\search.php 81
+ERROR - 2024-12-04 07:13:14 --> Query error: Unknown column 'violation_name' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_tipe_pelanggaran`
+WHERE `violation_name` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 46
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 47
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:13:42 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 75
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 50
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:20 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\list-kategori-pelanggaran.php 84
+ERROR - 2024-12-04 07:14:58 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\admin\kategori-pelanggaran\edit.php 20
+ERROR - 2024-12-04 07:14:58 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\kategori-pelanggaran\edit.php 24
+ERROR - 2024-12-04 07:15:27 --> Severity: Notice --> Undefined property: stdClass::$get_point C:\xampp\htdocs\si-langgar\application\views\admin\kategori-pelanggaran\edit.php 27
+ERROR - 2024-12-04 07:15:56 --> Query error: Unknown column 'get_point' in 'field list' - Invalid query: UPDATE `tb_tipe_pelanggaran` SET `nama_pelanggaran` = 'Buang Sampah Sembarangan', `get_point` = '4'
+WHERE `id` = '8'
+ERROR - 2024-12-04 07:18:11 --> Query error: Unknown column 'tb_guru.id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_pelanggaran`
+JOIN `tb_guru` ON `tb_guru`.`id` = `tb_pelanggaran`.`teacher_id`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_pelanggaran`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_pelanggaran`.`class_id`
+JOIN `tb_tipe_pelanggaran` ON `tb_tipe_pelanggaran`.`id` = `tb_pelanggaran`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 07:18:53 --> Query error: Unknown column 'tb_guru.id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_pelanggaran`
+JOIN `tb_guru` ON `tb_guru`.`id` = `tb_pelanggaran`.`teacher_id`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_pelanggaran`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_pelanggaran`.`class_id`
+JOIN `tb_tipe_pelanggaran` ON `tb_tipe_pelanggaran`.`id` = `tb_pelanggaran`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
