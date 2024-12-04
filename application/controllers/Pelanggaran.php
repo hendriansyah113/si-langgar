@@ -147,6 +147,7 @@ class Pelanggaran extends MY_Controller
                         $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
                         redirect('pelanggaran');
                 }
+
                 if (count($this->input->post())) {
                         if ($this->form_validation('pelanggaran') == true) {
                                 $post_kelas = $this->db->escape_str(filter($this->input->post('kelas', true)));
@@ -154,6 +155,19 @@ class Pelanggaran extends MY_Controller
                                 $post_pelapor = $this->db->escape_str(filter($this->input->post('pelapor', true)));
                                 $post_kategori = $this->db->escape_str(filter($this->input->post('kategori', true)));
                                 $post_catatan = $this->db->escape_str(filter($this->input->post('catatan', true)));
+
+                                if (empty($post_kelas)) {
+                                        $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Kelas wajib dipilih.']);
+                                        redirect('pelanggaran/edit/' . $id);
+                                }
+                                if (empty($post_siswa)) {
+                                        $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Siswa wajib dipilih.']);
+                                        redirect('pelanggaran/edit/' . $id);
+                                }
+                                if (empty($post_pelapor)) {
+                                        $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Pelapor wajib dipilih.']);
+                                        redirect('pelanggaran/edit/' . $id);
+                                }
 
                                 $data_guru = db_query('tb_guru', array('id' => $post_pelapor));
                                 $data_kelas = db_query('tb_kelas', array('id' => $post_kelas));
