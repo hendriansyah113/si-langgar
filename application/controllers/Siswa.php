@@ -154,7 +154,7 @@ class Siswa extends MY_Controller
                 } else {
                     $data_murid = [
                         'nisn' => $post_nisn,
-                        'std_name' => $post_nama,
+                        'nama_siswa' => $post_nama,
                         'class_id' => $row_kelas->id,
                         'address' => $post_alamat,
                         'phone_number' => $post_phone
@@ -287,7 +287,7 @@ class Siswa extends MY_Controller
                 print('<option value="0">Tidak Tersedia...</option>');
             } else {
                 foreach ($cek_kelas->result() as $kelas) {
-                    print('<option value="' . $kelas->id . '">' . $kelas->class_name . '</option>');
+                    print('<option value="' . $kelas->id . '">' . $kelas->nama_kelas . '</option>');
                 }
             }
         } else {
@@ -311,7 +311,7 @@ class Siswa extends MY_Controller
                 print('<option value="0">Tidak Tersedia...</option>');
             } else {
                 foreach ($cek_kelas->result() as $siswa) {
-                    print('<option value="' . $siswa->id . '">' . $siswa->std_name . '</option>');
+                    print('<option value="' . $siswa->nisn . '">' . $siswa->nama_siswa . '</option>');
                 }
             }
         } else {

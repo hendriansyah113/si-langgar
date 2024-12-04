@@ -54,7 +54,7 @@ class Pelanggaran extends MY_Controller
                 $data['list'] = $this->Pelanggaran_model->DataPelanggaran($config['per_page'], $data['uri'], ['tb_siswa.nisn' => $keyword]);
                 $data['page'] = 'List Pelanggaran';
                 $data['login'] = $this->data_user();
-                $data['point'] = $this->db->get_where('tb_website', ['id' => '1'])->row('point');
+                $data['poin'] = $this->db->get_where('tb_website', ['id' => '1'])->row('poin');
                 $data['total_rows'] = $config['total_rows'];
                 $data['pagination'] = $this->pagination->create_links();
                 $data['is_kepala_sekolah'] = $this->data_user()->level == 'Kepala Sekolah';
@@ -79,11 +79,11 @@ class Pelanggaran extends MY_Controller
                                 $post_kategori = $this->db->escape_str(filter($this->input->post('kategori', true)));
                                 $post_catatan = $this->db->escape_str(filter($this->input->post('catatan', true)));
 
-                                $data_guru = db_query('tb_guru', array('id' => $post_pelapor));
+                                $data_guru = db_query('tb_guru', array('nik' => $post_pelapor));
                                 $data_kelas = db_query('tb_kelas', array('id' => $post_kelas));
-                                $data_siswa = db_query('tb_siswa', array('id' => $post_siswa));
+                                $data_siswa = db_query('tb_siswa', array('nisn' => $post_siswa));
                                 $data_kategori = db_query('tb_tipe_pelanggaran', array('id' => $post_kategori));
-                                $data_wali = db_query('tb_wali', array('id' => $post_siswa));
+                                $data_wali = db_query('tb_wali', array('nisn' => $post_siswa));
 
                                 if ($data_kelas['count'] == 0) {
                                         $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal', 'msg' => 'Data Kelas Tidak Tersedia']);
@@ -96,14 +96,13 @@ class Pelanggaran extends MY_Controller
                                 } else {
                                         $data = [
                                                 'nisn' => $data_siswa['rows']['nisn'],
-                                                'student_id' => $data_siswa['rows']['id'],
                                                 'class_id' => $data_kelas['rows']['id'],
-                                                'teacher_id' => $data_guru['rows']['id'],
+                                                'nik' => $data_guru['rows']['nik'],
                                                 'wali_id' => $data_wali['rows']['id'],
                                                 'tipe_id' => $data_kategori['rows']['id'],
-                                                'note' => $post_catatan,
-                                                'point' => $data_kategori['rows']['get_point'],
-                                                'reported_on' => date('Y-m-d')
+                                                'catatan' => $post_catatan,
+                                                'poin' => $data_kategori['rows']['poin_pelanggaran'],
+                                                'tanggal_lapor' => date('Y-m-d')
                                         ];
                                         $insert = $this->Pelanggaran_model->insert($data);
                                         if ($insert == true) {
@@ -169,23 +168,23 @@ class Pelanggaran extends MY_Controller
                                         redirect('pelanggaran/edit/' . $id);
                                 }
 
-                                $data_guru = db_query('tb_guru', array('id' => $post_pelapor));
+                                $data_guru = db_query('tb_guru', array('nik' => $post_pelapor));
                                 $data_kelas = db_query('tb_kelas', array('id' => $post_kelas));
-                                $data_siswa = db_query('tb_siswa', array('id' => $post_siswa));
+                                $data_siswa = db_query('tb_siswa', array('nisn' => $post_siswa));
                                 $data_kategori = db_query('tb_tipe_pelanggaran', array('id' => $post_kategori));
-                                $data_wali = db_query('tb_wali', array('id' => $post_siswa));
+                                $data_wali = db_query('tb_wali', array('nisn' => $post_siswa));
 
                                 $data = [
                                         'nisn' => $data_siswa['rows']['nisn'],
-                                        'student_id' => $data_siswa['rows']['id'],
                                         'class_id' => $data_kelas['rows']['id'],
-                                        'teacher_id' => $data_guru['rows']['id'],
+                                        'nik' => $data_guru['rows']['nik'],
                                         'wali_id' => $data_wali['rows']['id'],
                                         'tipe_id' => $data_kategori['rows']['id'],
-                                        'note' => $post_catatan,
-                                        'point' => $data_kategori['rows']['get_point'],
-                                        'reported_on' => date('Y-m-d H:i:s')
+                                        'catatan' => $post_catatan,
+                                        'poin' => $data_kategori['rows']['poin_pelanggaran'],
+                                        'tanggal_lapor' => date('Y-m-d H:i:s')
                                 ];
+
                                 $update = $this->Pelanggaran_model->update($data, $this->db->escape_str(filter($id, true)));
 
                                 if ($update == true) {

@@ -10,7 +10,7 @@ class Pelanggaran_model extends CI_Model
     public $table_join3 = 'tb_kelas';
     public $table_join4 = 'tb_tipe_pelanggaran';
     public $table_join5 = 'tb_siswa';
-    public $join1 = 'tb_guru.id = tb_pelanggaran.teacher_id';
+    public $join1 = 'tb_guru.nik = tb_pelanggaran.nik';
     public $join2 = 'tb_wali.id = tb_pelanggaran.wali_id';
     public $join3 = 'tb_kelas.id = tb_pelanggaran.class_id';
     public $join4 = 'tb_tipe_pelanggaran.id = tb_pelanggaran.tipe_id';
@@ -79,11 +79,11 @@ class Pelanggaran_model extends CI_Model
         if ($value <> '') {
             $this->db->like($value);
         }
-        $this->db->select($this->table . '.*, ' . $this->table_join5 . '.id as violation_id, siswa.nama_siswa, kelas.class_name, guru.teacher_name, wali.parent_name, kelas.wali_name, tipe_pelanggaran.nama_pelanggaran');
+        $this->db->select($this->table . '.*, ' . $this->table_join5 . '.nisn as violation_id, siswa.nama_siswa, kelas.nama_kelas, guru.nama_guru, wali.nama_wali, kelas.nama_wali, tipe_pelanggaran.nama_pelanggaran');
         $this->db->join($this->table_join5, $this->join5);
-        $this->db->join('tb_siswa siswa', 'siswa.id = ' . $this->table . '.nisn', 'left');
+        $this->db->join('tb_siswa siswa', 'siswa.nisn = ' . $this->table . '.nisn', 'left');
         $this->db->join('tb_kelas kelas', 'siswa.class_id = kelas.id', 'left');
-        $this->db->join('tb_guru guru', 'guru.id = ' . $this->table . '.teacher_id', 'left');
+        $this->db->join('tb_guru guru', 'guru.nik = ' . $this->table . '.nik', 'left');
         $this->db->join('tb_wali wali', 'wali.id = ' . $this->table . '.wali_id', 'left');
         $this->db->join('tb_tipe_pelanggaran tipe_pelanggaran', 'tipe_pelanggaran.id = ' . $this->table . '.tipe_id', 'left');
         $this->db->limit($limit, $start);
@@ -92,14 +92,6 @@ class Pelanggaran_model extends CI_Model
         $query = $this->db->get();
         return $query;
     }
-
-
-
-
-
-
-
-
 
     function DataPelanggaranPrint($id)
     {
@@ -151,7 +143,7 @@ class Pelanggaran_model extends CI_Model
     // Check Data
     function CheckPelanggaranByID($id)
     {
-        return $this->db->get_where($this->table_2, ['nisn' => $id]); //Cek Data Pada Tabel Pelanggaran
+        return $this->db->get_where($this->table_2, ['nisn' => 'nisn']); //Cek Data Pada Tabel Pelanggaran
     }
 
     function insert($data)
