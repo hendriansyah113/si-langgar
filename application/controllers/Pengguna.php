@@ -73,7 +73,7 @@ class Pengguna extends MY_Controller
 
                                 $hass_pass = hash_pw($post_password);
                                 $data_pengguna = [
-                                        'full_name' => $post_nama,
+                                        'nama_lengkap' => $post_nama,
                                         'email' => $post_email,
                                         'username' => $post_username,
                                         'password' => $hass_pass,
@@ -124,7 +124,7 @@ class Pengguna extends MY_Controller
                                 $post_level = $this->db->escape_str($this->input->post('level', true));
 
                                 $update_post = [
-                                        'full_name' => $post_nama,
+                                        'nama_lengkap' => $post_nama,
                                         'username' => $post_username,
                                         'level' => $post_level,
                                         'status' => '1'

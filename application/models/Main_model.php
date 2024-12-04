@@ -1,21 +1,24 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Main_model extends CI_Model {
+class Main_model extends CI_Model
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
     // Get Hall Of Fame
 
-    public function TopPelanggaran() {
+    public function TopPelanggaran()
+    {
         $this->db->select('tb_pelanggaran.id');
         $this->db->select('count(tb_pelanggaran.id) as total_pelanggaran');
         $this->db->select('tb_pelanggaran.type_id');
         $this->db->select('tb_tipe_pelanggaran.violation_name');
         $this->db->from('tb_pelanggaran');
-        $this->db->join('tb_tipe_pelanggaran','tb_pelanggaran.type_id = tb_tipe_pelanggaran.id');
+        $this->db->join('tb_tipe_pelanggaran', 'tb_pelanggaran.type_id = tb_tipe_pelanggaran.id');
         $this->db->group_by('tb_pelanggaran.type_id');
         $this->db->order_by('total_pelanggaran', 'desc');
         $this->db->limit(5);
@@ -24,14 +27,15 @@ class Main_model extends CI_Model {
         return $query->result();
     }
 
-    public function TopMurid() {
+    public function TopMurid()
+    {
         $this->db->select('SUM(tb_pelanggaran.point) as total_poin');
         $this->db->select('count(tb_pelanggaran.id) as total_pelanggaran');
         $this->db->select('tb_pelanggaran.type_id');
         $this->db->select('tb_siswa.std_name');
         $this->db->select('tb_siswa.nisn');
         $this->db->from('tb_pelanggaran');
-        $this->db->join('tb_siswa','tb_pelanggaran.student_id = tb_siswa.id', 'left');
+        $this->db->join('tb_siswa', 'tb_pelanggaran.student_id = tb_siswa.id', 'left');
         $this->db->group_by('tb_pelanggaran.student_id');
         $this->db->order_by('total_poin', 'desc');
         $this->db->limit(5);
@@ -40,13 +44,14 @@ class Main_model extends CI_Model {
         return $query->result();
     }
 
-    public function GetOrdersHOF() {
+    public function GetOrdersHOF()
+    {
         $this->db->select('SUM(orders.price) as total_pembelian');
         $this->db->select('count(orders.id) as tcount');
         $this->db->select('orders.user_id');
-        $this->db->select('users.full_name');
+        $this->db->select('users.nama_lengkap');
         $this->db->from('orders');
-        $this->db->join('users','orders.user_id = users.id');
+        $this->db->join('users', 'orders.user_id = users.id');
         $this->db->where(['MONTH(orders.created_at)' => date('m'), ' YEAR(orders.created_at)' => date('Y')]);
         $this->db->group_by('orders.user_id');
         $this->db->order_by('total_pembelian', 'desc');
@@ -56,13 +61,14 @@ class Main_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function GetServiceHOF() {
+    public function GetServiceHOF()
+    {
         $this->db->select('SUM(orders.price) as total_pembelian');
         $this->db->select('count(orders.id) as tcount');
         $this->db->select('orders.service_name');
         $this->db->select('services.service_name');
         $this->db->from('orders');
-        $this->db->join('services','orders.service_name = services.service_name');
+        $this->db->join('services', 'orders.service_name = services.service_name');
         $this->db->where(['MONTH(orders.created_at)' => date('m'), ' YEAR(orders.created_at)' => date('Y')]);
         $this->db->group_by('orders.service_name');
         $this->db->order_by('total_pembelian', 'desc');
@@ -72,7 +78,8 @@ class Main_model extends CI_Model {
         return $query->result_array();
     }
 
-    function total($table, $user, $select = null) {
+    function total($table, $user, $select = null)
+    {
         if ($select !== null) {
             $this->db->select($select);
         }
@@ -81,20 +88,23 @@ class Main_model extends CI_Model {
         return $this->db->get();
     }
 
-    function get_note_level($select) {
+    function get_note_level($select)
+    {
         $this->db->select($select);
         $this->db->from('website');
         return $this->db->get();
-    }  
+    }
 
-    function UpdateWhere($table, $field, $column, $is_column) {
+    function UpdateWhere($table, $field, $column, $is_column)
+    {
         $this->db->set($field);
         $this->db->where($column, $is_column);
         $this->db->update($table);
         return $this;
     }
 
-    function GetTotalRowsPaginationJoin($table, $value = null, $where = []) {
+    function GetTotalRowsPaginationJoin($table, $value = null, $where = [])
+    {
         if (!empty($where)) {
             $this->db->where($where);
         }
@@ -106,7 +116,8 @@ class Main_model extends CI_Model {
         return $this->db->count_all_results();
     }
 
-    function GetPaginationJoin($table, $order_by, $limit, $start, $value = null, $where = []) {
+    function GetPaginationJoin($table, $order_by, $limit, $start, $value = null, $where = [])
+    {
         if (!empty($where)) {
             $this->db->where($where);
         }
@@ -120,7 +131,8 @@ class Main_model extends CI_Model {
         return $this->db->get();
     }
 
-    function TotalListSearchPelanggaran($value = null) {
+    function TotalListSearchPelanggaran($value = null)
+    {
         if (!empty($value)) {
             $this->db->like($value);
         }
@@ -133,7 +145,8 @@ class Main_model extends CI_Model {
         return $this->db->count_all_results();
     }
 
-    function ListSearchPelanggaran($limit, $start, $value = null) {
+    function ListSearchPelanggaran($limit, $start, $value = null)
+    {
         if (!empty($value)) {
             $this->db->like($value);
         }
@@ -148,17 +161,20 @@ class Main_model extends CI_Model {
         return $this->db->get();
     }
 
-    function insert($table, $data) {
+    function insert($table, $data)
+    {
         $this->db->insert($table, $data);
         return $this->db->insert_id();
     }
 
-    function update_data($where, $data, $table) {
+    function update_data($where, $data, $table)
+    {
         $this->db->where($where);
         $this->db->update($table, $data);
     }
 
-    function Get($table, $order_by, $limit, $where = null) {
+    function Get($table, $order_by, $limit, $where = null)
+    {
         if ($where !== null) {
             $this->db->where($where);
         }
@@ -168,10 +184,9 @@ class Main_model extends CI_Model {
         return $this->db->get();
     }
 
-    function GetOrderBy($table, $column, $type) {
+    function GetOrderBy($table, $column, $type)
+    {
         $this->db->order_by($column, $type);
         return $this->db->get($table);
     }
-
 }
-?>

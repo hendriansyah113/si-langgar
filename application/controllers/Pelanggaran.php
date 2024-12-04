@@ -100,7 +100,7 @@ class Pelanggaran extends MY_Controller
                                                 'class_id' => $data_kelas['rows']['id'],
                                                 'teacher_id' => $data_guru['rows']['id'],
                                                 'wali_id' => $data_wali['rows']['id'],
-                                                'type_id' => $data_kategori['rows']['id'],
+                                                'tipe_id' => $data_kategori['rows']['id'],
                                                 'note' => $post_catatan,
                                                 'point' => $data_kategori['rows']['get_point'],
                                                 'reported_on' => date('Y-m-d')
@@ -181,7 +181,7 @@ class Pelanggaran extends MY_Controller
                                         'class_id' => $data_kelas['rows']['id'],
                                         'teacher_id' => $data_guru['rows']['id'],
                                         'wali_id' => $data_wali['rows']['id'],
-                                        'type_id' => $data_kategori['rows']['id'],
+                                        'tipe_id' => $data_kategori['rows']['id'],
                                         'note' => $post_catatan,
                                         'point' => $data_kategori['rows']['get_point'],
                                         'reported_on' => date('Y-m-d H:i:s')

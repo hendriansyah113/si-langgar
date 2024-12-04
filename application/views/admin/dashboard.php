@@ -1,98 +1,98 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h6 class="card-title text-uppercase text-muted mb-0">Murid</h6>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $total_siswa ?></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span></span>
-                    <span></span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h6 class="card-title text-uppercase text-muted mb-0">Guru</h6>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $total_guru ?></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-success text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span></span>
-                    <span></span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h6 class="card-title text-uppercase text-muted mb-0">Wali Murid</h6>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $total_wali ?></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span></span>
-                    <span></span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h6 class="card-title text-uppercase text-muted mb-0">Pelanggaran</h6>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $total_pelanggaran ?></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-times-circle"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span></span>
-                    <span></span>
-                  </p>
-                </div>
-              </div>
+<!-- Card stats -->
+<div class="row">
+  <div class="col-xl-3 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h6 class="card-title text-uppercase text-muted mb-0">Murid</h6>
+            <span class="h2 font-weight-bold mb-0"><?php echo $total_siswa ?></span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+              <i class="fas fa-users"></i>
             </div>
           </div>
         </div>
+        <p class="mt-3 mb-0 text-muted text-sm">
+          <span></span>
+          <span></span>
+        </p>
       </div>
     </div>
-    <div class="container-fluid mt--7">
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h6 class="card-title text-uppercase text-muted mb-0">Guru</h6>
+            <span class="h2 font-weight-bold mb-0"><?php echo $total_guru ?></span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 mb-0 text-muted text-sm">
+          <span></span>
+          <span></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h6 class="card-title text-uppercase text-muted mb-0">Wali Murid</h6>
+            <span class="h2 font-weight-bold mb-0"><?php echo $total_wali ?></span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 mb-0 text-muted text-sm">
+          <span></span>
+          <span></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h6 class="card-title text-uppercase text-muted mb-0">Pelanggaran</h6>
+            <span class="h2 font-weight-bold mb-0"><?php echo $total_pelanggaran ?></span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 mb-0 text-muted text-sm">
+          <span></span>
+          <span></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid mt--7">
   <div class="row">
     <!-- Table 1 -->
     <div class="col-md-6 mb-4">
@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php foreach ($top_pelanggaran as $row) { ?>
               <tbody>
                 <tr>
-                  <td><?php echo $row->violation_name ?></td>
+                  <td><?php echo $row->nama_pelanggaran ?></td>
                   <td><?php echo $row->total_pelanggaran ?></td>
                 </tr>
               </tbody>
@@ -138,9 +138,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php foreach ($top_murid as $row) { ?>
               <tbody>
                 <tr>
-                  <td><?php echo $row->std_name ?></td>
-                  <td><?php echo $row->total_poin ?> Dari <?php echo $row->total_pelanggaran ?> Pelanggaran</td>
-                  <td><a class="btn btn-primary btn-sm" href="<?php echo base_url('admin/search/') ?><?php echo $row->nisn ?>"><i class="fas fa-eye text-white"></i></a></td>
+                  <td><?php echo $row->nama_siswa ?></td>
+                  <td><?php echo $row->total_poin ?> Dari <?php echo $row->total_pelanggaran ?>
+                    Pelanggaran</td>
+                  <td><a class="btn btn-primary btn-sm"
+                      href="<?php echo base_url('admin/search/') ?><?php echo $row->nisn ?>"><i
+                        class="fas fa-eye text-white"></i></a></td>
                 </tr>
               </tbody>
             <?php } ?>

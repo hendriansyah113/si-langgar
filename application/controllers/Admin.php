@@ -1,40 +1,45 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin extends MY_Controller {
+class Admin extends MY_Controller
+{
 
-	function __construct(){
-		parent::__construct();   
+    function __construct()
+    {
+        parent::__construct();
         $this->session('Admin');
         $this->load->model(array('Main_model', 'Pelanggaran_model', 'Siswa_model'));
-	}
+    }
 
-	public function index(){
-		$data = [	'page' => 'Admin Dashboard',
-					'login' => $this->data_user(),
-					'total_siswa' => $this->db->count_all('tb_siswa'),
-					'total_guru' => $this->db->count_all('tb_guru'),
-					'total_wali' => $this->db->count_all('tb_wali'),
-					'total_pelanggaran' => $this->db->count_all('tb_pelanggaran'),
-					'top_pelanggaran' => $this->Pelanggaran_model->TopPelanggaran(),
-					'top_murid' => $this->Pelanggaran_model->TopMurid()
-				];
-		$this->template_admin('admin/dashboard', $data);
-	}
-    
-// ==== SEARCH ==== //
-    public function search($nisn){
+    public function index()
+    {
+        $data = [
+            'page' => 'Admin Dashboard',
+            'login' => $this->data_user(),
+            'total_siswa' => $this->db->count_all('tb_siswa'),
+            'total_guru' => $this->db->count_all('tb_guru'),
+            'total_wali' => $this->db->count_all('tb_wali'),
+            'total_pelanggaran' => $this->db->count_all('tb_pelanggaran'),
+            'top_pelanggaran' => $this->Pelanggaran_model->TopPelanggaran(),
+            'top_murid' => $this->Pelanggaran_model->TopMurid()
+        ];
+        $this->template_admin('admin/dashboard', $data);
+    }
+
+    // ==== SEARCH ==== //
+    public function search($nisn)
+    {
         if (!isset($nisn)) {
             $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
             redirect('admin/dashboard');
-        } 
+        }
         if (count($this->uri->segment_array()) > 4) {
             redirect('admin/dashboard');
         }
         if (http_build_query($_GET, '', "&")) {
-            $config['suffix'] = '?' . http_build_query($_GET, '', "&"); 
+            $config['suffix'] = '?' . http_build_query($_GET, '', "&");
         } else {
-            $config['suffix'] = '' . http_build_query($_GET, '', "&");    
+            $config['suffix'] = '' . http_build_query($_GET, '', "&");
         }
 
         $cek_siswa = $this->Siswa_model->CariSiswa($this->db->escape_str(filter($nisn)));
@@ -46,8 +51,8 @@ class Admin extends MY_Controller {
         }
 
         $config['per_page'] = 20;  //show record per halaman
-        $config['base_url'] = site_url('admin/search/'.$nisn.'');
-        $config['total_rows'] = $this->Siswa_model->TotalDataPelanggaranSiswa(['nisn' => $nisn]);  
+        $config['base_url'] = site_url('admin/search/' . $nisn . '');
+        $config['total_rows'] = $this->Siswa_model->TotalDataPelanggaranSiswa(['nisn' => $nisn]);
         $per_page = $config['per_page'];
         $config['uri_segment'] = 4;  // uri parameter
         $choice = $config['total_rows'] / $per_page;
@@ -79,8 +84,8 @@ class Admin extends MY_Controller {
         $data['pagination'] = $this->pagination->create_links();
         $data['page'] = 'Search ' . $nisn;
         $data['siswa'] = $siswa;
-        $data['total_point'] = $this->Pelanggaran_model->CariTotalPelanggaranSiswa($siswa->id)->point;
+        $data['total_poin'] = $this->Pelanggaran_model->CariTotalPelanggaranSiswa($siswa->id)->poin;
         $data['login'] = $this->data_user();
         $this->template_admin('search', $data);
-    }        
+    }
 }
