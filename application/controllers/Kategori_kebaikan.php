@@ -1,35 +1,38 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kategori_kebaikan extends MY_Controller {
+class Kategori_kebaikan extends MY_Controller
+{
 
-    function __construct(){
-        parent::__construct();   
+    function __construct()
+    {
+        parent::__construct();
         $this->session('Admin');
         $this->load->model(array('Kategorikebaikan_model', 'Main_model'));
     }
-    
+
     // ==== Kategori Kebaikan ==== //
-    public function index(){
+    public function index()
+    {
         $keyword = $this->input->get('search', true);
         $keyword = $this->db->escape_str($keyword);
-        
-        $config['per_page'] = 20;  
+
+        $config['per_page'] = 20;
         $config['base_url'] = site_url('kategori_kebaikan/index');
-        $config['total_rows'] = $this->Kategorikebaikan_model->TotalDataKategoriKebaikan(['nama_kebaikan' => $keyword]);  
+        $config['total_rows'] = $this->Kategorikebaikan_model->TotalDataKategoriKebaikan(['nama_kebaikan' => $keyword]);
         $per_page = $config['per_page'];
         $config['uri_segment'] = 3;
         $choice = $config['total_rows'] / $per_page;
         $config['num_links'] = 2;
-        
+
         if ($keyword <> '') {
             $config['suffix'] = '?' . http_build_query($_GET, '', "&");
         } else if (http_build_query($_GET, '', "&")) {
-            $config['suffix'] = '?' . http_build_query($_GET, '', "&"); 
+            $config['suffix'] = '?' . http_build_query($_GET, '', "&");
         } else {
-            $config['suffix'] = '' . http_build_query($_GET, '', "&");    
+            $config['suffix'] = '' . http_build_query($_GET, '', "&");
         }
-    
+
         // Membuat Style pagination untuk BootStrap v4
         $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
@@ -49,7 +52,7 @@ class Kategori_kebaikan extends MY_Controller {
         $config['first_tagl_close'] = '</span></li>';
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
-    
+
         $this->pagination->initialize($config);
         $data['uri'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $data['list_kebaikan'] = $this->Kategorikebaikan_model->DataKategoriKebaikan($config['per_page'], $data['uri'], ['nama_kebaikan' => $keyword]);
@@ -58,24 +61,25 @@ class Kategori_kebaikan extends MY_Controller {
         $data['total_rows'] = $config['total_rows'];
         $data['pagination'] = $this->pagination->create_links();
         $this->template_admin('admin/list-kategori-kebaikan', $data);
-    }    
+    }
 
-    public function tambah() {
+    public function tambah()
+    {
         if (count($this->uri->segment_array()) > 2) {
             redirect('admin');
-        }            
+        }
         if (count($this->input->post())) {
-            if ($this->form_validation('kategori-kebaikan') == true) { 
+            if ($this->form_validation('kategori-kebaikan') == true) {
                 $post_name = $this->db->escape_str($this->input->post('name', true));
                 $post_point = $this->db->escape_str($this->input->post('point', true));
-    
+
                 $data = [
                     'nama_kebaikan' => $post_name,
                     'poin_kebaikan' => $post_point
-                ];   
-                
+                ];
+
                 log_message('info', 'Data to insert: ' . json_encode($data)); // Log the data to insert
-    
+
                 $insert = $this->Kategorikebaikan_model->insert($data);
                 if ($insert) {
                     $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil', 'msg' => 'Data Baru Berhasil Ditambahkan']);
@@ -89,39 +93,40 @@ class Kategori_kebaikan extends MY_Controller {
         }
         $data['login'] = $this->data_user();
         $data['page'] = 'Tambah Kategori Kebaikan';
-        $this->template_admin('admin/kategori-kebaikan/add', $data);                
-    }    
+        $this->template_admin('admin/kategori-kebaikan/add', $data);
+    }
 
-    public function edit($id = null){
+    public function edit($id = null)
+    {
         if (count($this->uri->segment_array()) > 3) {
             redirect('admin');
-        } 
+        }
         if (!isset($id)) {
             $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
             redirect('kategori-kebaikan');
-        } 
-    
+        }
+
         if (!is_numeric($id)) {
             $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
             redirect('kategori-kebaikan');
-        } 
-    
-        $data_kategori_kebaikan = $this->Kategorikebaikan_model->getByID($this->db->escape_str(filter($id, true)));   
-    
+        }
+
+        $data_kategori_kebaikan = $this->Kategorikebaikan_model->getByID($this->db->escape_str(filter($id, true)));
+
         if ($data_kategori_kebaikan->num_rows() == 0) {
             $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
             redirect('kategori-kebaikan');
-        }   
-        
+        }
+
         if (count($this->input->post())) {
-            if ($this->form_validation('kategori-kebaikan') == true) { 
+            if ($this->form_validation('kategori-kebaikan') == true) {
                 $post_name = $this->db->escape_str($this->input->post('name', true));
                 $post_point = $this->db->escape_str($this->input->post('point', true));
-                                
+
                 $update_post = [
                     'nama_kebaikan' => $post_name,
                     'poin_kebaikan' => $post_point
-                ];  
+                ];
                 $update = $this->Kategorikebaikan_model->update($update_post, $this->db->escape_str(filter($id, true)));
                 if ($update == true) {
                     $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil!', 'msg' => 'Data Berhasil Di Ubah.']);
@@ -131,17 +136,18 @@ class Kategori_kebaikan extends MY_Controller {
                 }
             }
         }
-    
+
         $data['tipe_kebaikan'] = $data_kategori_kebaikan->row();
         $data['page'] = 'Edit Kategori Kebaikan';
         $data['login'] = $this->data_user();
         $this->template_admin('admin/kategori-kebaikan/edit', $data);
     }
-                  
-    public function hapus(){   
+
+    public function hapus()
+    {
         if (count($this->input->post())) {
             $post_id = $this->input->post($this->db->escape_str(filter('id', true)));
-            $data_kategori_kebaikan = $this->Kategorikebaikan_model->getByID($post_id);   
+            $data_kategori_kebaikan = $this->Kategorikebaikan_model->getByID($post_id);
             if ($data_kategori_kebaikan->num_rows() == 0) {
                 $this->session->set_flashdata('result', ['alert' => 'danger', 'title' => 'Gagal!', 'msg' => 'Data tidak ditemukan.']);
                 redirect('kategori-kebaikan');
@@ -156,6 +162,5 @@ class Kategori_kebaikan extends MY_Controller {
                 }
             }
         }
-    }               
-
+    }
 }

@@ -1163,3 +1163,38 @@ ERROR - 2024-12-04 08:51:21 --> 404 Page Not Found: Assets/admin
 ERROR - 2024-12-04 08:51:21 --> 404 Page Not Found: Assets/admin
 ERROR - 2024-12-04 08:51:21 --> 404 Page Not Found: Assets/admin
 ERROR - 2024-12-04 08:51:21 --> 404 Page Not Found: Assets/admin
+ERROR - 2024-12-04 08:52:49 --> Severity: error --> Exception: Call to undefined method stdClass::num_rows() C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 111
+ERROR - 2024-12-04 08:52:55 --> Severity: error --> Exception: Call to undefined method stdClass::num_rows() C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 111
+ERROR - 2024-12-04 08:53:49 --> Severity: error --> Exception: Call to undefined method stdClass::num_rows() C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 08:53:59 --> Severity: error --> Exception: Call to undefined method stdClass::num_rows() C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 08:56:34 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 08:58:27 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 08:58:50 --> Severity: error --> Exception: Call to undefined method stdClass::num_rows() C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 08:59:21 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 09:00:48 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:36:29 --> Query error: Unknown column 'tb_guru.id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`id` = `tb_kebaikan`.`teacher_id`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`type_id`
+JOIN `tb_siswa` ON `tb_siswa`.`id` = `tb_kebaikan`.`student_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 11:36:35 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:41:04 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:41:08 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:41:32 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:41:36 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:41:53 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:41:57 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:49:45 --> Severity: Notice --> Undefined variable: data_kategori_kebaikan C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:49:45 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 116
+ERROR - 2024-12-04 11:50:08 --> Severity: error --> Exception: Call to a member function num_rows() on null C:\xampp\htdocs\si-langgar\application\controllers\Kategori_kebaikan.php 117
+ERROR - 2024-12-04 11:55:25 --> Query error: Unknown column 'tb_guru.id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`id` = `tb_kebaikan`.`teacher_id`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`type_id`
+JOIN `tb_siswa` ON `tb_siswa`.`id` = `tb_kebaikan`.`student_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
