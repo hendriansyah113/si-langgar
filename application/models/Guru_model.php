@@ -16,20 +16,29 @@ class Guru_model extends CI_Model
         parent::__construct();
     }
 
-
-    function TotalDataGuru($value = null)
+    public function TotalDataGuru($conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start(); // Mulai grup untuk kondisi pencarian
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value); // Tambahkan kondisi LIKE
+            }
+            $this->db->group_end(); // Tutup grup
         }
+
         $this->db->from($this->table);
-        return $this->db->count_all_results();
+        $query = $this->db->count_all_results();
+        return $query;
     }
 
-    function DataGuru($limit, $start, $value = null)
+    public function DataGuru($limit, $start, $conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start();
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value);
+            }
+            $this->db->group_end();
         }
         $this->db->limit($limit, $start);
         $this->db->from($this->table);
