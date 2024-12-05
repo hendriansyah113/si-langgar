@@ -144,3 +144,115 @@ ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClas
 ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
 ERROR - 2024-12-05 09:04:02 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\pengguna\edit.php 24
 ERROR - 2024-12-05 09:04:38 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\pengguna\edit.php 24
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$school_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 9
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$school_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 62
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 151
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:07:03 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$school_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 9
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$school_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 62
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 151
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:07:35 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:07:37 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 09:07:38 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:07:38 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\lib\header.php 161
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:08:12 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:08:12 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 09:08:12 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:08:12 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 28
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:08:54 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\dashboard.php 56
+ERROR - 2024-12-05 09:09:24 --> Severity: Notice --> Undefined property: stdClass::$point C:\xampp\htdocs\si-langgar\application\controllers\Dashboard.php 84
+ERROR - 2024-12-05 09:09:24 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 09:09:33 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 09:09:33 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 09:09:34 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:09:34 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:10:57 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 09:10:57 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 09:10:57 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:10:57 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 58
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$teacher_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 60
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 61
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$violation_name C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 62
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 63
+ERROR - 2024-12-05 09:11:05 --> Severity: Notice --> Undefined property: stdClass::$reported_on C:\xampp\htdocs\si-langgar\application\views\list-pelanggaran.php 66
+ERROR - 2024-12-05 09:11:12 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
