@@ -132,3 +132,15 @@ ERROR - 2024-12-05 08:33:19 --> 404 Page Not Found: Assets/js
 ERROR - 2024-12-05 08:33:22 --> 404 Page Not Found: Assets/css
 ERROR - 2024-12-05 08:33:22 --> 404 Page Not Found: Assets/js
 ERROR - 2024-12-05 08:33:22 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-05 09:03:13 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-05 09:04:02 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\pengguna\edit.php 24
+ERROR - 2024-12-05 09:04:38 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\pengguna\edit.php 24

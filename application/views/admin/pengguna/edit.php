@@ -21,7 +21,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="form-group">
             <label class="control-label">Nama</label>
             <input type="text" class="form-control" placeholder="Nama" name="nama"
-              value="<?php echo $pengguna->full_name ?>">
+              value="<?php echo $pengguna->nama_lengkap ?>">
           </div>
           <div class="form-group">
             <label class="control-label">Email</label>
@@ -45,6 +45,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               </option>
               <option value="Admin">Admin</option>
               <option value="Guru">Guru</option>
+              <option value="Kepala Sekolah">Kepala Sekolah</option>
             </select>
           </div>
           <div class="form-group text-right">
