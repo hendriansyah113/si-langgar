@@ -13,9 +13,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <?php $this->load->view('lib/validation_result'); ?>
                     <?php $this->load->view('lib/result'); ?>
                     <?php if (!$is_kepala_sekolah): ?>
-                    <a href="<?php echo base_url() ?>pelanggaran/tambah" class="btn btn-xl btn-success"
-                        style="margin-bottom: 15px; float: right;"><i class="fa fa-plus-square"></i> Input
-                        Pelanggaran</a>
+                        <a href="<?php echo base_url() ?>pelanggaran/tambah" class="btn btn-xl btn-success"
+                            style="margin-bottom: 15px; float: right;"><i class="fa fa-plus-square"></i> Input
+                            Pelanggaran</a>
                     <?php endif; ?>
                     <h3 class="mb-0"><?php echo $page ?></h3>
                     <form method="get" action="<?php echo base_url() ?>pelanggaran/index">
@@ -52,31 +52,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             $no = 1;
                             foreach ($list->result() as $row) {
                             ?>
-                            <tbody>
-                                <tr>
-                                    <td><?php echo $no++ ?></td>
-                                    <td><strong><?php echo $row->std_name ?></strong> (<?php echo $row->class_name ?>)
-                                    </td>
-                                    <td><?php echo $row->teacher_name ?></td>
-                                    <td><?php echo $row->parent_name ?></td>
-                                    <td><?php echo $row->violation_name ?></td>
-                                    <td><?php echo $row->note ?></td>
-                                    <td class="text-center"><span
-                                            class="badge badge-pill badge-warning"><?php echo $row->poin ?></span></td>
-                                    <td><?php echo $row->reported_on ?>
-                                    <td align="center">
-                                        <?php if (!$is_kepala_sekolah): ?>
-                                        <a href="<?php echo base_url() ?>Pelanggaran/edit/<?php echo $row->id ?>"
-                                            class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                        <a class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#modal_hapus<?php echo $row->id ?>"><i
-                                                class="fas fa-trash-alt text-white"></i></a>
-                                        <?php endif; ?>
-                                        <a href="<?php echo base_url() ?>pelanggaran/print-pelanggaran/<?php echo $row->id ?>"
-                                            class="btn btn-primary btn-sm"><i class="fas fa-print"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $no++ ?></td>
+                                        <td><strong><?php echo $row->nama_siswa ?></strong> (<?php echo $row->nama_kelas ?>)
+                                        </td>
+                                        <td><?php echo $row->nisn ?></td>
+                                        <td><?php echo $row->nama_guru ?></td>
+                                        <td><?php echo $row->nama_wali ?></td>
+                                        <td><?php echo $row->nama_pelanggaran ?></td>
+                                        <td><?php echo $row->catatan ?></td>
+                                        <td class="text-center"><span
+                                                class="badge badge-pill badge-warning"><?php echo $row->poin ?></span></td>
+                                        <td><?php echo $row->tanggal_lapor ?>
+                                        <td align="center">
+                                            <?php if (!$is_kepala_sekolah): ?>
+                                                <a href="<?php echo base_url() ?>Pelanggaran/edit/<?php echo $row->id ?>"
+                                                    class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                                <a class="btn btn-danger btn-sm" data-toggle="modal"
+                                                    data-target="#modal_hapus<?php echo $row->id ?>"><i
+                                                        class="fas fa-trash-alt text-white"></i></a>
+                                            <?php endif; ?>
+                                            <a href="<?php echo base_url() ?>pelanggaran/print-pelanggaran/<?php echo $row->id ?>"
+                                                class="btn btn-primary btn-sm"><i class="fas fa-print"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             <?php } ?>
                         </table>
                     </div>
@@ -85,10 +86,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <button class="btn btn-secondary mt-3" onclick="printTable()"><i class="fas fa-print"></i> Cetak
                 Data</button>
+            <?php
+            foreach ($list->result() as $row):
+            ?>
+                <div class="modal fade" id="modal_hapus<?php echo $row->id ?>" tabindex="-1" role="dialog"
+                    aria-labelledby="largeModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="myModalLabel"><i class="fa fa-trash-alt"></i> Hapus Data</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form class="form-horizontal" method="post" action="<?php echo base_url() ?>pelanggaran/hapus">
+                                <div class="modal-body">
+                                    <span>Anda yakin mau menghapus </span>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" value="<?php echo $row->id ?>">
+                                    <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                                    <button class="btn btn-danger">Hapus</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
+</div>
 
-    <script>
+<script>
     function printTable() {
         var printContents = document.getElementById('dataTable').outerHTML;
         var originalContents = document.body.innerHTML;
@@ -125,4 +155,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
         // Kembalikan konten asli setelah mencetak
         document.body.innerHTML = originalContents;
     }
-    </script>
+</script>
