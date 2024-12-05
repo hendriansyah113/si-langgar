@@ -1071,3 +1071,19 @@ OR  `tb_tipe_kebaikan`.`nama_kebaikan` LIKE '%Berperilaku %' ESCAPE '!'
  )
 ORDER BY `tb_kebaikan`.`id` DESC
  LIMIT 20
+ERROR - 2024-12-05 13:48:25 --> Query error: Unknown column 'nama_kebaikan' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_pelanggaran`
+JOIN `tb_guru` ON `tb_guru`.`nik` = `tb_pelanggaran`.`nik`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_pelanggaran`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_pelanggaran`.`class_id`
+JOIN `tb_tipe_pelanggaran` ON `tb_tipe_pelanggaran`.`id` = `tb_pelanggaran`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Wahyu %' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Wahyu %' ESCAPE '!'
+OR  `nama_guru` LIKE '%Wahyu %' ESCAPE '!'
+OR  `nama_wali` LIKE '%Wahyu %' ESCAPE '!'
+OR  `nama_kebaikan` LIKE '%Wahyu %' ESCAPE '!'
+OR  `tb_kebaikan`.`catatan` LIKE '%Wahyu %' ESCAPE '!'
+OR  `tb_kebaikan`.`tanggal_lapor` LIKE '%Wahyu %' ESCAPE '!'
+ )

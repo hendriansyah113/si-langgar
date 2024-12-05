@@ -60,24 +60,34 @@ class Pelanggaran_model extends CI_Model
         return $query->result();
     }
 
-    function TotalDataPelanggaran($value = null)
+    public function TotalDataPelanggaran($conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start(); // Mulai grup untuk kondisi pencarian
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value); // Tambahkan kondisi LIKE
+            }
+            $this->db->group_end(); // Tutup grup
         }
+
         $this->db->from($this->table);
         $this->db->join($this->table_join1, $this->join1);
         $this->db->join($this->table_join2, $this->join2);
         $this->db->join($this->table_join3, $this->join3);
         $this->db->join($this->table_join4, $this->join4);
         $this->db->join($this->table_join5, $this->join5);
-        return $this->db->count_all_results();
+        $query = $this->db->count_all_results();
+        return $query;
     }
 
-    function DataPelanggaran($limit, $start, $value = null)
+    public function DataPelanggaran($limit, $start, $conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start();
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value);
+            }
+            $this->db->group_end();
         }
         $this->db->select($this->table . '.*, ' . $this->table_join5 . '.nisn as violation_id, siswa.nama_siswa, kelas.nama_kelas, guru.nama_guru, wali.nama_wali, kelas.wali_kelas, tipe_pelanggaran.nama_pelanggaran');
         $this->db->join($this->table_join5, $this->join5);
