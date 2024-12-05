@@ -17,7 +17,21 @@ class Kebaikan extends MY_Controller
                 $keyword = $this->db->escape_str(filter($this->input->get('search', true)));
                 $config['per_page'] = 20;  //show record per halaman
                 $config['base_url'] = site_url('kebaikan/index');
-                $config['total_rows'] = $this->Kebaikan_model->TotalDataKebaikan(['tb_siswa.nisn' => $keyword]);
+                $search_conditions = [];
+                if (!empty($keyword)) {
+                        $search_conditions = [
+                                'tb_siswa.nama_siswa' => $keyword,
+                                'tb_siswa.nisn' => $keyword,
+                                'nama_guru' => $keyword,
+                                'nama_wali' => $keyword,
+                                'nama_kebaikan' => $keyword,
+                                'tb_kebaikan.catatan' => $keyword,
+                                'tb_kebaikan.tanggal_lapor' => $keyword,
+                        ];
+                }
+
+                // Hitung total data berdasarkan pencarian
+                $config['total_rows'] = $this->Kebaikan_model->TotalDataKebaikan($search_conditions);
                 $per_page = $config['per_page'];
                 $config['uri_segment'] = 3;  // uri parameter
                 $choice = $config['total_rows'] / $per_page;
@@ -51,7 +65,7 @@ class Kebaikan extends MY_Controller
 
                 $this->pagination->initialize($config);
                 $data['uri'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-                $data['list'] = $this->Kebaikan_model->DataKebaikan($config['per_page'], $data['uri'], ['tb_siswa.nisn' => $keyword]);
+                $data['list'] = $this->Kebaikan_model->DataKebaikan($config['per_page'], $data['uri'], $search_conditions);
                 $data['page'] = 'List Kebaikan';
                 $data['login'] = $this->data_user();
                 $data['poin'] = $this->db->get_where('tb_website', ['id' => '1'])->row('poin');

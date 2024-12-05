@@ -944,3 +944,130 @@ ERROR - 2024-12-05 13:19:23 --> 404 Page Not Found: Assets/js
 ERROR - 2024-12-05 13:20:10 --> 404 Page Not Found: Assets/css
 ERROR - 2024-12-05 13:20:11 --> 404 Page Not Found: Assets/js
 ERROR - 2024-12-05 13:20:11 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 13:33:27 --> Query error: Unknown column 'tb_guru.nama_guru' in 'where clause' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`wali_kelas`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_guru`.`nama_guru` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_wali`.`nama_wali` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_tipe_kebaikan`.`nama_kebaikan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`catatan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`tanggal_lapor` LIKE '%Elevia %' ESCAPE '!'
+ )
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-05 13:36:34 --> Query error: Unknown column 'tb_guru.guru' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`nik` = `tb_kebaikan`.`nik`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_guru`.`guru` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_wali`.`nama_wali` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_tipe_kebaikan`.`nama_kebaikan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`catatan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`tanggal_lapor` LIKE '%Elevia %' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:38:27 --> Query error: Unknown column 'guru.guru' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`nik` = `tb_kebaikan`.`nik`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Elevia %' ESCAPE '!'
+OR  `guru`.`guru` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_wali`.`nama_wali` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_tipe_kebaikan`.`nama_kebaikan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`catatan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`tanggal_lapor` LIKE '%Elevia %' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:38:34 --> Query error: Unknown column 'guru.nama_guru' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`nik` = `tb_kebaikan`.`nik`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Elevia %' ESCAPE '!'
+OR  `guru`.`nama_guru` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_wali`.`nama_wali` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_tipe_kebaikan`.`nama_kebaikan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`catatan` LIKE '%Elevia %' ESCAPE '!'
+OR  `tb_kebaikan`.`tanggal_lapor` LIKE '%Elevia %' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:40:07 --> Query error: Unknown column 'guru.nama_guru' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_kebaikan`
+JOIN `tb_guru` ON `tb_guru`.`nik` = `tb_kebaikan`.`nik`
+JOIN `tb_wali` ON `tb_wali`.`id` = `tb_kebaikan`.`wali_id`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_kebaikan`.`class_id`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Vanessa%' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Vanessa%' ESCAPE '!'
+OR  `guru`.`nama_guru` LIKE '%Vanessa%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:40:27 --> Query error: Unknown column 'tb_guru.nama_guru' in 'where clause' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`wali_kelas`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Vanessa%' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Vanessa%' ESCAPE '!'
+OR  `tb_guru`.`nama_guru` LIKE '%Vanessa%' ESCAPE '!'
+ )
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-05 13:42:31 --> Query error: Unknown column 'tb_wali.nama_wali' in 'where clause' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`wali_kelas`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Bambang%' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Bambang%' ESCAPE '!'
+OR  `nama_guru` LIKE '%Bambang%' ESCAPE '!'
+OR  `tb_wali`.`nama_wali` LIKE '%Bambang%' ESCAPE '!'
+ )
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-05 13:43:09 --> Query error: Unknown column 'tb_tipe_kebaikan.nama_kebaikan' in 'where clause' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`wali_kelas`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE   (
+`tb_siswa`.`nama_siswa` LIKE '%Berperilaku %' ESCAPE '!'
+OR  `tb_siswa`.`nisn` LIKE '%Berperilaku %' ESCAPE '!'
+OR  `nama_guru` LIKE '%Berperilaku %' ESCAPE '!'
+OR  `nama_wali` LIKE '%Berperilaku %' ESCAPE '!'
+OR  `tb_tipe_kebaikan`.`nama_kebaikan` LIKE '%Berperilaku %' ESCAPE '!'
+ )
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
