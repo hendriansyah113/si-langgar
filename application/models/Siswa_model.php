@@ -24,19 +24,17 @@ class Siswa_model extends CI_Model
         parent::__construct();
     }
 
-
-    public function CariSiswa($search = null)
+    public function CariSiswa($search)
     {
-        if ($search <> null) {
-            $this->db->where('tb_siswa.nisn', $search);
-        }
-        $this->db->select($this->table_select);
-        $this->db->select($this->table_select2);
-        $this->db->from($this->table);
-        $this->db->join($this->table_join1, $this->join);
-        $query = $this->db->get();
-
-        return $query;
+        $this->db->select('*');
+        $this->db->from('tb_siswa'); // Ganti dengan nama tabel Anda
+        $this->db->group_start()
+            ->like('nik', $search)          // Pencarian berdasarkan NIK
+            ->or_like('nama_siswa', $search)      // Pencarian berdasarkan Nama
+            ->or_like('alamat', $search)    // Pencarian berdasarkan Alamat
+            ->or_like('nomor_hp', $search)  // Pencarian berdasarkan Nomor HP
+            ->group_end();
+        return $this->db->get();
     }
 
     function TotalDataPelanggaranSiswa($where = null)
@@ -55,21 +53,31 @@ class Siswa_model extends CI_Model
         return $this->db->get();
     }
 
-    function TotalDataSiswa($value = null)
+    public function TotalDataSiswa($conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start(); // Mulai grup untuk kondisi pencarian
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value); // Tambahkan kondisi LIKE
+            }
+            $this->db->group_end(); // Tutup grup
         }
+
         $this->db->from($this->table);
         $this->db->join($this->table_join1, $this->join);
         $this->db->join($this->table_join2, $this->join2);
-        return $this->db->count_all_results();
+        $query = $this->db->count_all_results();
+        return $query;
     }
 
-    function DataSiswa($limit, $start, $value = null)
+    public function DataSiswa($limit, $start, $conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start();
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value);
+            }
+            $this->db->group_end();
         }
         $this->db->limit($limit, $start);
         $this->db->from($this->table);
@@ -79,6 +87,7 @@ class Siswa_model extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+
 
     // Get Data
     function getByID($nisn)

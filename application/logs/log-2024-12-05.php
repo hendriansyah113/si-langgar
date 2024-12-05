@@ -770,3 +770,166 @@ ERROR - 2024-12-05 09:56:24 --> Severity: Warning --> Invalid argument supplied 
 ERROR - 2024-12-05 09:56:24 --> Severity: Notice --> Undefined property: stdClass::$note C:\xampp\htdocs\si-langgar\application\views\kebaikan\edit.php 74
 ERROR - 2024-12-05 09:56:38 --> Severity: Notice --> Undefined variable: guru C:\xampp\htdocs\si-langgar\application\views\kebaikan\edit.php 56
 ERROR - 2024-12-05 09:56:38 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\kebaikan\edit.php 56
+ERROR - 2024-12-05 10:01:31 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 10:09:23 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:09:24 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:09:24 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:09:47 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:09:47 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:09:47 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:09:55 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:09:55 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:09:55 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:35 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:12:35 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:35 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:41 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:12:41 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:41 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:46 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:12:46 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:46 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:50 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:12:50 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:12:50 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:13:04 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:13:05 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:13:05 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:13:08 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:13:08 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:13:08 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:29:52 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%1!%%' ESCAPE ...' at line 5 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_kelas`.`nama_kelas` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+ERROR - 2024-12-05 10:30:13 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama_siswa` LIKE  LIKE '%!%1!%%' E...' at line 5 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama_siswa` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+ERROR - 2024-12-05 10:30:44 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%1!%%' ESCAPE ...' at line 5 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+AND  `tb_kelas`.`nama_kelas` LIKE  LIKE '%!%1!%%' ESCAPE '!'
+ERROR - 2024-12-05 10:30:47 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%12!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%12!%%' ESCAP...' at line 5 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE  LIKE '%!%12!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%12!%%' ESCAPE '!'
+AND  `tb_kelas`.`nama_kelas` LIKE  LIKE '%!%12!%%' ESCAPE '!'
+ERROR - 2024-12-05 10:30:48 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:30:48 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:30:48 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:30:50 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 10:30:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:30:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 10:30:55 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%1234!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%1234!%%' E...' at line 5 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE  LIKE '%!%1234!%%' ESCAPE '!'
+AND  `tb_siswa`.`nama` LIKE  LIKE '%!%1234!%%' ESCAPE '!'
+AND  `tb_kelas`.`nama_kelas` LIKE  LIKE '%!%1234!%%' ESCAPE '!'
+ERROR - 2024-12-05 10:31:22 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%1234!%%' ESCAPE '!'
+OR  `tb_siswa`.`nama` LIKE  LIKE '%!%1234!%%' ES...' at line 4 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE  LIKE '%!%1234!%%' ESCAPE '!'
+OR  `tb_siswa`.`nama` LIKE  LIKE '%!%1234!%%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE  LIKE '%!%1234!%%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 12:58:49 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 12:58:49 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 12:58:49 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 12:58:51 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 12:58:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 12:58:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 12:58:55 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 12:58:55 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 12:58:55 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 12:59:02 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+OR  `tb_siswa`.`nama` LIKE  LIKE '%!%...' at line 4 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE  LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+OR  `tb_siswa`.`nama` LIKE  LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE  LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 12:59:18 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE  LIK...' at line 4 - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE  LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE  LIKE '%!%Deri Rifanudin2!%%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:02:23 --> Severity: error --> Exception: Call to a member function result() on array C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-05 13:02:25 --> Severity: error --> Exception: Call to a member function result() on array C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-05 13:05:10 --> Query error: Unknown column 'tb_class.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_class`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:07:08 --> Query error: Unknown column 'tb_class.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_class`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:07:48 --> Query error: Unknown column 'tb_kelas.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:08:32 --> Query error: Unknown column 'tb_kelas.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:09:06 --> Query error: Unknown column 'tb_kelas.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:09:35 --> Query error: Unknown column 'tb_kelas.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:10:44 --> Query error: Unknown column 'nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 13:10:51 --> Query error: Unknown column 'tb_kelas.nama_kelas' in 'where clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+WHERE   (
+`tb_siswa`.`nisn` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
+OR  `tb_kelas`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
+ )
