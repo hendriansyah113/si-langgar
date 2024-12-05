@@ -68,3 +68,64 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </div>
     </div>
   </div>
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <!-- Table 1 -->
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Top 5 Kebaikan Yang Sering Dilakukan</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th>Nama Kebaikan</th>
+                  <th>Total Kebaikan</th>
+                </tr>
+              </thead>
+              <?php foreach ($top_kebaikan as $row) { ?>
+                <tbody>
+                  <tr>
+                    <td><?php echo $row->nama_kebaikan ?></td>
+                    <td><?php echo $row->total_kebaikan ?></td>
+                  </tr>
+                </tbody>
+              <?php } ?>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Table 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Top 5 Murid Yang Sering Melakukan Kebaikan</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th>Nama Murid</th>
+                  <th>Total Point</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <?php foreach ($top_murid_kebaikan as $row) { ?>
+                <tbody>
+                  <tr>
+                    <td><?php echo $row->nama_siswa ?></td>
+                    <td><?php echo $row->total_poin ?> Dari <?php echo $row->total_kebaikan ?>
+                      Kebaikan</td>
+                    <td><a class="btn btn-primary btn-sm"
+                        href="<?php echo base_url('dashboard/search_kebaikan/') ?><?php echo $row->nisn ?>"><i
+                          class="fas fa-eye text-white"></i></a></td>
+                  </tr>
+                </tbody>
+              <?php } ?>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

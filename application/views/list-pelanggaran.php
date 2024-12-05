@@ -22,7 +22,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Cari NISN Siswa..."
+                                    <input type="text" class="form-control" placeholder="Cari Data Pelanggaran..."
                                         name="search">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary waves-effect waves-light" type="submit"><i

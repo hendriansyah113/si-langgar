@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label class="col-form-label">Kategori Kelas</label>
-                                    <select class="form-control" name="sub_kelas" id="sub_kelas">
+                                    <select class="form-control select2" name="sub_kelas" id="sub_kelas">
                                         <option value="">Pilih Salah Satu</option>
                                         <option value="X">10</option>
                                         <option value="XI">11</option>
@@ -32,7 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="col-form-label">Kelas</label>
-                                    <select class="form-control" name="kelas" id="kelas">
+                                    <select class="form-control select2" name="kelas" id="kelas">
                                         <option value="">Pilih Sub Kelas Terlebih Dahulu</option>
                                     </select>
                                 </div>
@@ -49,7 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <select name="pelapor" class="form-control select2">
                                 <option value="">Pilih Salah Satu</option>
                                 <?php foreach ($guru as $row) : ?>
-                                <option value="<?php echo $row->nik ?>"><?php echo $row->nama_guru ?></option>
+                                    <option value="<?php echo $row->nik ?>"><?php echo $row->nama_guru ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -58,7 +58,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <select name="kategori" class="form-control select2">
                                 <option value="">Pilih Salah Satu</option>
                                 <?php foreach ($kategori as $row) : ?>
-                                <option value="<?php echo $row->id ?>"><?php echo $row->nama_pelanggaran ?></option>
+                                    <option value="<?php echo $row->id ?>"><?php echo $row->nama_pelanggaran ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -79,40 +79,40 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
     <script src="<?php echo base_url() ?>assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('#sub_kelas').change(function() {
-            var sub_kelas = $('#sub_kelas').val();
-            $.ajax({
-                method: "POST",
-                data: {
-                    'sub_kelas': sub_kelas
-                },
-                url: "<?php echo base_url() ?>siswa/ajax-list-kelas",
-                dataType: "html",
-                success: function(data) {
-                    $('#kelas').html(data);
-                }
+        $(document).ready(function() {
+            $('#sub_kelas').change(function() {
+                var sub_kelas = $('#sub_kelas').val();
+                $.ajax({
+                    method: "POST",
+                    data: {
+                        'sub_kelas': sub_kelas
+                    },
+                    url: "<?php echo base_url() ?>siswa/ajax-list-kelas",
+                    dataType: "html",
+                    success: function(data) {
+                        $('#kelas').html(data);
+                    }
+                });
+            });
+            $('#kelas').change(function() {
+                var kelas = $('#kelas').val();
+                $.ajax({
+                    method: "POST",
+                    data: {
+                        'kelas': kelas
+                    },
+                    url: "<?php echo base_url() ?>siswa/ajax-list-siswa",
+                    dataType: "html",
+                    success: function(data) {
+                        $('#siswa').html(data);
+                    }
+                });
             });
         });
-        $('#kelas').change(function() {
-            var kelas = $('#kelas').val();
-            $.ajax({
-                method: "POST",
-                data: {
-                    'kelas': kelas
-                },
-                url: "<?php echo base_url() ?>siswa/ajax-list-siswa",
-                dataType: "html",
-                success: function(data) {
-                    $('#siswa').html(data);
-                }
-            });
-        });
-    });
     </script>
     <script type="text/javascript">
-    $(function() {
-        $('.select2').select2();
-        $('.selectguru').select2();
-    });
+        $(function() {
+            $('.select2').select2();
+            $('.selectguru').select2();
+        });
     </script>

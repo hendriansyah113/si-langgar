@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <?php echo form_open() ?>
                         <div class="form-group">
                             <label class="col-form-label">Kategor Kelas</label>
-                            <select class="form-control" name="sub_kelas" id="sub_kelas">
+                            <select class="form-control select2" name="sub_kelas" id="sub_kelas">
                                 <option value="">Pilih Salah Satu</option>
                                 <option value="X">10</option>
                                 <option value="XI">11</option>
@@ -33,7 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                         <div class="form-group">
                             <label class="col-form-label">Kelas</label>
-                            <select class="form-control" name="kelas" id="kelas">
+                            <select class="form-control select2" name="kelas" id="kelas">
                                 <option value="">Pilih Sub Kelas Terlebih Dahulu</option>
                             </select>
                         </div>

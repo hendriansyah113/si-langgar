@@ -6,6 +6,7 @@ class Siswa_model extends CI_Model
 
     private $table = 'tb_siswa'; // Table Siswa
     public $table_2 = 'tb_pelanggaran'; // Table Pelanggaran
+    public $table_3 = 'tb_kebaikan'; // Table Pelanggaran
     public $table_join1 = 'tb_kelas';
     public $table_join2 = 'tb_wali';
     public $table_select = 'tb_siswa.*';
@@ -24,17 +25,18 @@ class Siswa_model extends CI_Model
         parent::__construct();
     }
 
-    public function CariSiswa($search)
+    public function CariSiswa($search = null)
     {
-        $this->db->select('*');
-        $this->db->from('tb_siswa'); // Ganti dengan nama tabel Anda
-        $this->db->group_start()
-            ->like('nik', $search)          // Pencarian berdasarkan NIK
-            ->or_like('nama_siswa', $search)      // Pencarian berdasarkan Nama
-            ->or_like('alamat', $search)    // Pencarian berdasarkan Alamat
-            ->or_like('nomor_hp', $search)  // Pencarian berdasarkan Nomor HP
-            ->group_end();
-        return $this->db->get();
+        if ($search <> null) {
+            $this->db->where('tb_siswa.nisn', $search);
+        }
+        $this->db->select($this->table_select);
+        $this->db->select($this->table_select2);
+        $this->db->from($this->table);
+        $this->db->join($this->table_join1, $this->join);
+        $query = $this->db->get();
+
+        return $query;
     }
 
     function TotalDataPelanggaranSiswa($where = null)
@@ -44,12 +46,28 @@ class Siswa_model extends CI_Model
         return $this->db->count_all_results();
     }
 
+    function TotalDataKebaikanSiswa($where = null)
+    {
+        $this->db->where($where);
+        $this->db->from($this->table_3);
+        return $this->db->count_all_results();
+    }
+
     function DataPelanggaranSiswa($limit, $start, $where = null)
     {
         $this->db->order_by($this->id, $this->order_by);
         $this->db->where($where);
         $this->db->limit($limit, $start);
         $this->db->from($this->table_2);
+        return $this->db->get();
+    }
+
+    function DataKebaikanSiswa($limit, $start, $where = null)
+    {
+        $this->db->order_by($this->id, $this->order_by);
+        $this->db->where($where);
+        $this->db->limit($limit, $start);
+        $this->db->from($this->table_3);
         return $this->db->get();
     }
 

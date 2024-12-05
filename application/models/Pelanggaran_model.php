@@ -29,19 +29,17 @@ class Pelanggaran_model extends CI_Model
 
     public function TopPelanggaran()
     {
-        $this->db->select('tb_pelanggaran.id');
-        $this->db->select('count(tb_pelanggaran.id) as total_pelanggaran');
-        $this->db->select('tb_pelanggaran.tipe_id');
-        $this->db->select('tb_tipe_pelanggaran.nama_pelanggaran');
+        $this->db->select('tb_tipe_pelanggaran.nama_pelanggaran, count(tb_pelanggaran.id) as total_pelanggaran');
         $this->db->from('tb_pelanggaran');
         $this->db->join('tb_tipe_pelanggaran', 'tb_pelanggaran.tipe_id = tb_tipe_pelanggaran.id');
-        $this->db->group_by('tb_pelanggaran.tipe_id');
+        $this->db->group_by('tb_pelanggaran.tipe_id, tb_tipe_pelanggaran.nama_pelanggaran'); // Grup berdasarkan tipe_id dan nama_pelanggaran
         $this->db->order_by('total_pelanggaran', 'desc');
         $this->db->limit(5);
         $query = $this->db->get();
 
         return $query->result();
     }
+
 
     public function TopMurid()
     {

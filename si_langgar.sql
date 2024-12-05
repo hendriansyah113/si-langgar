@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2024 at 07:52 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- Waktu pembuatan: 05 Des 2024 pada 14.56
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,149 +24,157 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_guru`
+-- Struktur dari tabel `tb_guru`
 --
 
 CREATE TABLE `tb_guru` (
-  `id` int(11) NOT NULL,
   `nik` int(11) NOT NULL,
-  `teacher_name` varchar(50) NOT NULL,
-  `subject` varchar(50) NOT NULL
+  `nama_guru` varchar(50) NOT NULL,
+  `mata_pelajaran` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_guru`
+-- Dumping data untuk tabel `tb_guru`
 --
 
-INSERT INTO `tb_guru` (`id`, `nik`, `teacher_name`, `subject`) VALUES
-(1, 12345678, 'Vanessa Angel S.Pd', 'Fisika'),
-(2, 87654321, 'Maria Vania S.Pd', 'Kimia'),
-(3, 12348765, 'Nikita Mirzani  S.Pd', 'Biologi'),
-(4, 43215678, 'Ricardo Milos  S.Pd', 'Olahraga'),
-(5, 567854321, 'Johny Shin  S.Pd', 'Bahasa Inggris'),
-(6, 334242, 'Wulandari  S.Pd', 'Matematika');
+INSERT INTO `tb_guru` (`nik`, `nama_guru`, `mata_pelajaran`) VALUES
+(334242, 'Wulandari  S.Pd', 'Matematika'),
+(9865443, 'reza', 'IPS'),
+(12345678, 'Vanessa Angel S.Pd', 'Fisika'),
+(12348765, 'Nikita Mirzani  S.Pd', 'Biologi'),
+(43215678, 'Ricardo Milos  S.Pd', 'Olahraga'),
+(87654321, 'Maria Vania S.Pd', 'Kimia'),
+(567854321, 'Johny Shin  S.Pd', 'Bahasa Inggris');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kebaikan`
+-- Struktur dari tabel `tb_kebaikan`
 --
 
 CREATE TABLE `tb_kebaikan` (
   `id` int(11) NOT NULL,
   `nisn` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `teacher_id` int(11) NOT NULL,
+  `nik` int(11) NOT NULL,
   `wali_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `note` text NOT NULL,
-  `point` int(11) NOT NULL,
-  `reported_on` date NOT NULL
+  `tipe_id` int(11) NOT NULL,
+  `catatan` text NOT NULL,
+  `poin` int(11) NOT NULL,
+  `tanggal_lapor` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_kebaikan`
+-- Dumping data untuk tabel `tb_kebaikan`
 --
 
-INSERT INTO `tb_kebaikan` (`id`, `nisn`, `student_id`, `class_id`, `teacher_id`, `wali_id`, `type_id`, `note`, `point`, `reported_on`) VALUES
-(2, 4151, 4, 3, 2, 4, 2, 'vhvhv', 25, '2024-06-06'),
-(3, 6272, 6, 3, 2, 6, 2, 'sdadasds', 25, '2024-06-08'),
-(4, 2345, 2, 1, 2, 2, 4, 'Jancok bgt kamu', 0, '2024-06-08');
+INSERT INTO `tb_kebaikan` (`id`, `nisn`, `class_id`, `nik`, `wali_id`, `tipe_id`, `catatan`, `poin`, `tanggal_lapor`) VALUES
+(2, 4151, 3, 567854321, 4, 2, 'vhvhv', 25, '2024-06-06'),
+(3, 6272, 3, 567854321, 6, 2, 'sdadasds', 25, '2024-06-08'),
+(4, 2345, 1, 567854321, 2, 4, 'Jancok bgt kamu2', 0, '2024-09-28'),
+(5, 4151, 3, 43215678, 5, 1, 'baik', 25, '2024-12-04'),
+(7, 4151, 3, 334242, 5, 2, 'jj', 25, '2024-12-04'),
+(8, 3556, 4, 12345678, 4, 1, 'j', 25, '2024-12-04');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kelas`
+-- Struktur dari tabel `tb_kelas`
 --
 
 CREATE TABLE `tb_kelas` (
   `id` int(11) NOT NULL,
-  `wali_name` varchar(50) NOT NULL,
-  `class_name` varchar(50) NOT NULL,
+  `wali_kelas` varchar(50) NOT NULL,
+  `nama_kelas` varchar(50) NOT NULL,
   `sub_class` enum('X','XI','XII') NOT NULL,
-  `total_students` int(11) NOT NULL,
+  `total_siswa` int(11) NOT NULL,
   `total_poin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_kelas`
+-- Dumping data untuk tabel `tb_kelas`
 --
 
-INSERT INTO `tb_kelas` (`id`, `wali_name`, `class_name`, `sub_class`, `total_students`, `total_poin`) VALUES
-(1, 'Vanessa Angel', 'XII-RPL-1', 'XII', 40, 0),
+INSERT INTO `tb_kelas` (`id`, `wali_kelas`, `nama_kelas`, `sub_class`, `total_siswa`, `total_poin`) VALUES
+(1, 'Wulandari  S.Pd', 'XII-RPL-1', 'XII', 40, 0),
 (2, 'Maria Vania', 'XII-TKJ-1', 'XII', 40, 0),
 (3, 'Nikita Mirzani', 'XI-AP-1', 'XI', 40, 0),
 (4, 'Ricardo Milos', 'X-AK-1', 'X', 40, 0),
-(5, 'Ricardo Milos', 'XII - RPL', 'XI', 12, 0);
+(5, 'Ricardo Milos', 'XII - RPL', 'XI', 12, 0),
+(6, 'Ricardo Milos  S.Pd', 'jj', 'X', 90, 0),
+(7, 'reza', 'XII - Busana', 'XI', 10, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pelanggaran`
+-- Struktur dari tabel `tb_pelanggaran`
 --
 
 CREATE TABLE `tb_pelanggaran` (
   `id` int(11) NOT NULL,
   `nisn` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `teacher_id` int(11) NOT NULL,
+  `nik` int(11) NOT NULL,
   `wali_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `note` text NOT NULL,
-  `point` int(11) NOT NULL,
-  `reported_on` date NOT NULL
+  `tipe_id` int(11) NOT NULL,
+  `catatan` text NOT NULL,
+  `poin` int(11) NOT NULL,
+  `tanggal_lapor` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_pelanggaran`
+-- Dumping data untuk tabel `tb_pelanggaran`
 --
 
-INSERT INTO `tb_pelanggaran` (`id`, `nisn`, `student_id`, `class_id`, `teacher_id`, `wali_id`, `type_id`, `note`, `point`, `reported_on`) VALUES
-(16, 7611, 5, 4, 3, 5, 1, 'Bolos Sekolah', 10, '2024-06-02'),
-(18, 3556, 7, 4, 5, 7, 2, 'Tidak Rapi', 25, '2024-06-01'),
-(19, 7611, 5, 4, 3, 5, 2, 'Baju dikeluarkan', 25, '2024-06-02'),
-(20, 2147483647, 9, 4, 2, 9, 3, 'Rambut Panjang', 10, '2024-06-02'),
-(21, 6272, 6, 3, 2, 6, 4, 'Bobo', 50, '2024-06-02'),
-(22, 1234, 1, 2, 1, 1, 8, 'Buang Sampah', 5, '2024-06-02'),
-(23, 5646, 3, 2, 4, 3, 3, 'Rambut Panjang', 10, '2024-06-02'),
-(24, 2147483647, 9, 4, 6, 9, 4, 'Makan Terus', 50, '2024-06-08');
+INSERT INTO `tb_pelanggaran` (`id`, `nisn`, `class_id`, `nik`, `wali_id`, `tipe_id`, `catatan`, `poin`, `tanggal_lapor`) VALUES
+(18, 1234, 4, 334242, 7, 2, 'Tidak Rapi', 25, '2024-06-01'),
+(19, 1234, 4, 334242, 5, 2, 'Baju dikeluarkan', 25, '2024-06-02'),
+(20, 1254, 4, 12345678, 9, 3, 'Rambut Panjang', 10, '2024-06-02'),
+(21, 1254, 3, 12345678, 6, 4, 'Bobo', 50, '2024-06-02'),
+(22, 1254, 2, 12345678, 1, 8, 'Buang Sampah', 5, '2024-06-02'),
+(23, 2345, 2, 12348765, 3, 3, 'Rambut Panjang', 10, '2024-06-02'),
+(24, 1254, 1, 12348765, 2, 4, '1', 50, '2024-12-04'),
+(27, 3556, 4, 9865443, 4, 1, 'm', 10, '2024-12-05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_siswa`
+-- Struktur dari tabel `tb_siswa`
 --
 
 CREATE TABLE `tb_siswa` (
-  `id` int(11) NOT NULL,
   `nisn` int(11) NOT NULL,
-  `std_name` varchar(50) NOT NULL,
+  `nama_siswa` varchar(50) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `address` text NOT NULL,
-  `phone_number` double NOT NULL
+  `alamat` text NOT NULL,
+  `nomor_hp` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_siswa`
+-- Dumping data untuk tabel `tb_siswa`
 --
 
-INSERT INTO `tb_siswa` (`id`, `nisn`, `std_name`, `class_id`, `address`, `phone_number`) VALUES
-(1, 1234, 'Deri Rifanudin', 2, 'Palangka Raya', 8965665),
-(2, 2345, 'Hanif Ilmi', 1, 'Bekasi', 8965665),
-(3, 5646, 'Sugiarto', 2, 'Bekasi', 8965665),
-(4, 4151, 'Dewi Karina', 3, 'Bekasi', 8965665),
-(5, 7611, 'Yuliana', 4, 'Bekasi', 8965665),
-(6, 6272, 'Joko Susilo', 3, 'Bekasi', 8965665),
-(7, 3556, 'Elevia Shabrina', 4, 'Bekasi', 8965665),
-(8, 1254, 'Eko Wahyu', 1, 'Bekasi', 8965665),
-(9, 2147483647, 'Lisa', 4, 'Jl. Gatot', 82256099778);
+INSERT INTO `tb_siswa` (`nisn`, `nama_siswa`, `class_id`, `alamat`, `nomor_hp`) VALUES
+(1234, 'Deri Rifanudin2', 2, 'Palangka Raya', 8965665),
+(1254, 'Eko Wahyu', 1, 'Bekasi', 8965665),
+(2345, 'Hanif Ilmi', 1, 'Bekasi', 8965665),
+(3556, 'Elevia Shabrina', 4, 'Bekasi', 8965665),
+(4151, 'Dewi Karina', 3, 'Bekasi', 8965665),
+(5646, 'Sugiarto', 2, 'Bekasi', 8965665),
+(6272, 'Joko Susilo', 3, 'Bekasi', 8965665),
+(7611, 'Yuliana', 4, 'Bekasi', 8965665),
+(34343, 'sasa', 4, 'hj h ', 98899),
+(45454, 'htht', 4, '232', 2333333333333),
+(211212, 'efef', 4, 'efe', 2323),
+(33232323, '2323', 5, '232', 2333333333333),
+(222222221, 'efoef', 5, 'efe', 333),
+(999999999, 'jakjs', 3, 'kkkkkkk', 82254098080),
+(2147483647, 'Lisa', 4, 'Jl. Gatot', 82256099778);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_tipe_kebaikan`
+-- Struktur dari tabel `tb_tipe_kebaikan`
 --
 
 CREATE TABLE `tb_tipe_kebaikan` (
@@ -176,7 +184,7 @@ CREATE TABLE `tb_tipe_kebaikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_tipe_kebaikan`
+-- Dumping data untuk tabel `tb_tipe_kebaikan`
 --
 
 INSERT INTO `tb_tipe_kebaikan` (`id`, `nama_kebaikan`, `poin_kebaikan`) VALUES
@@ -189,37 +197,37 @@ INSERT INTO `tb_tipe_kebaikan` (`id`, `nama_kebaikan`, `poin_kebaikan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_tipe_pelanggaran`
+-- Struktur dari tabel `tb_tipe_pelanggaran`
 --
 
 CREATE TABLE `tb_tipe_pelanggaran` (
   `id` int(11) NOT NULL,
-  `violation_name` text NOT NULL,
-  `get_point` int(11) NOT NULL
+  `nama_pelanggaran` text NOT NULL,
+  `poin_pelanggaran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_tipe_pelanggaran`
+-- Dumping data untuk tabel `tb_tipe_pelanggaran`
 --
 
-INSERT INTO `tb_tipe_pelanggaran` (`id`, `violation_name`, `get_point`) VALUES
+INSERT INTO `tb_tipe_pelanggaran` (`id`, `nama_pelanggaran`, `poin_pelanggaran`) VALUES
 (1, 'Bolos', 10),
 (2, 'Baju Tidak Rapi', 25),
 (3, 'Rambut Gondrong', 10),
 (4, 'Tidur Di Kelas', 50),
 (5, 'Berkelahi', 15),
 (7, 'Seks Bebas', 50),
-(8, 'Buang Sampah Sembarangan', 5);
+(8, 'Buang Sampah Sembarangan', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_users`
+-- Struktur dari tabel `tb_users`
 --
 
 CREATE TABLE `tb_users` (
   `id` int(11) NOT NULL,
-  `full_name` varchar(50) NOT NULL,
+  `nama_lengkap` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` text NOT NULL,
@@ -229,61 +237,63 @@ CREATE TABLE `tb_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_users`
+-- Dumping data untuk tabel `tb_users`
 --
 
-INSERT INTO `tb_users` (`id`, `full_name`, `email`, `username`, `password`, `level`, `status`, `remember_me`) VALUES
-(2, 'Yosefa Aditya Putra', 'yosefaaditya@gmail.com', 'admin', '$2y$12$5Q5kW.8ufgpKk3AMuYGpVu3Ew4xN85jTtJXOO6Wym3WPgQgw6TPZy', 'Admin', 1, 'PuRrF2IySPM5nDZ8NGvbwlYHkFB5O98sgJad7UGW0Q3JHVAjf4ymx7x6YsRcpu96'),
+INSERT INTO `tb_users` (`id`, `nama_lengkap`, `email`, `username`, `password`, `level`, `status`, `remember_me`) VALUES
+(2, 'Yosefa Aditya Putra2', 'yosefaaditya@gmail.com', 'admin', '$2y$12$5Q5kW.8ufgpKk3AMuYGpVu3Ew4xN85jTtJXOO6Wym3WPgQgw6TPZy', 'Admin', 1, 'PuRrF2IySPM5nDZ8NGvbwlYHkFB5O98sgJad7UGW0Q3JHVAjf4ymx7x6YsRcpu96'),
 (3, 'Burhan', 'burhan@udin.coid', 'Burhanadc', '$2y$10$IX73HM8tB5/hEq5jC/RSbuVf4aruw8EieTi0un183Q6PRgLNbStPK', 'Admin', 1, '2reLcE8acgCYoTZPBtiGsjk1pyJFrn9xsaqXQgQtVA2K0dKwv9lVHTHzxqvGFuWw'),
 (4, 'Halim', 'ulfiyaumakhoiriyah@gmail.com', 'Nurkholik22', '$2y$10$HQYQqxGCeCnxuQTvlFWV7O.3lVYJC9Gcjo.Ve9mzQpX51fUmgCqOK', 'Guru', 1, ''),
-(5, 'Guru', 'guru@gmail.com', 'guruguru', '$2y$10$GG6vxWxshuRDemv7T2vWCu529eKq2GTLtfedprtgl8YProhxRa8t2', 'Guru', 1, 'o3CFBtGHtqYmaO5lVHW8d65gXrRwLjmIPcknT79NeApJ0NMJ3sjQZDfBafUxOuCg'),
-(6, 'Kepala Sekolah', 'sman1kupe@gmail.com', 'kepsek', '$2y$10$4FznU7ah/9SfC4CP3B4nNOMNTGNyNQjg55fdfHNheZjdxs5DtGZ4S', 'Kepala Sekolah', 1, '');
+(5, 'Guru', 'guru@gmail.com', 'guruguru', '$2y$10$GG6vxWxshuRDemv7T2vWCu529eKq2GTLtfedprtgl8YProhxRa8t2', 'Guru', 1, 'L7obQYlRVszHIEvma0MmG656Vtc8OSpt517jdjBywWPfq3i2FdkU2yeuRNMLCkUN'),
+(6, 'Kepala Sekolah', 'sman1kupe@gmail.com', 'kepsek', '$2y$10$4FznU7ah/9SfC4CP3B4nNOMNTGNyNQjg55fdfHNheZjdxs5DtGZ4S', 'Kepala Sekolah', 1, ''),
+(7, 'hendri2', 'hendriansyah113@gmail.com', 'hendri', '$2y$10$j54ZtoGj2olfV/1uUCad3uz.JS3Xm9Mks5184bpawfse1uV0//ubq', 'Kepala Sekolah', 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_wali`
+-- Struktur dari tabel `tb_wali`
 --
 
 CREATE TABLE `tb_wali` (
   `id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
-  `parent_name` varchar(50) NOT NULL,
-  `phone_number` double NOT NULL
+  `nisn` int(11) NOT NULL,
+  `nama_wali` varchar(50) NOT NULL,
+  `nomor_hp` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_wali`
+-- Dumping data untuk tabel `tb_wali`
 --
 
-INSERT INTO `tb_wali` (`id`, `student_id`, `parent_name`, `phone_number`) VALUES
-(1, 1, 'Saubi', 8965665),
-(2, 2, 'Saubi', 8965665),
-(3, 3, 'Saubi', 8965665),
-(4, 4, 'Saubi', 8965665),
-(5, 5, 'Bambang', 8965665),
-(6, 6, 'Saubi', 8965665),
-(7, 7, 'Saubi', 8965665),
-(8, 8, 'Saubi', 8965665),
-(9, 9, 'Haechan', 82256099778);
+INSERT INTO `tb_wali` (`id`, `nisn`, `nama_wali`, `nomor_hp`) VALUES
+(1, 1234, 'Saubi', 8965665),
+(2, 1254, 'Saubi', 8965665),
+(3, 2345, 'Saubi', 8965665),
+(4, 3556, 'Saubi', 8965665),
+(5, 4151, 'Bambang', 8965665),
+(6, 5646, 'Saubi', 8965665),
+(7, 6272, 'Saubi', 8965665),
+(8, 7611, 'Saubi', 8965665),
+(9, 2147483647, 'Haechan', 82256099778),
+(10, 34343, 'hun', 98899);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_website`
+-- Struktur dari tabel `tb_website`
 --
 
 CREATE TABLE `tb_website` (
   `id` int(1) NOT NULL,
-  `school_name` varchar(50) NOT NULL,
-  `point` int(11) NOT NULL
+  `nama_sekolah` varchar(50) NOT NULL,
+  `poin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_website`
+-- Dumping data untuk tabel `tb_website`
 --
 
-INSERT INTO `tb_website` (`id`, `school_name`, `point`) VALUES
+INSERT INTO `tb_website` (`id`, `nama_sekolah`, `poin`) VALUES
 (1, 'SMAN-1 KUPE', 0);
 
 --
@@ -291,139 +301,127 @@ INSERT INTO `tb_website` (`id`, `school_name`, `point`) VALUES
 --
 
 --
--- Indexes for table `tb_guru`
+-- Indeks untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
+  ADD PRIMARY KEY (`nik`);
+
+--
+-- Indeks untuk tabel `tb_kebaikan`
+--
+ALTER TABLE `tb_kebaikan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_kebaikan`
---
-ALTER TABLE `tb_kebaikan`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_nisn` (`nisn`),
-  ADD KEY `idx_class_id` (`class_id`),
-  ADD KEY `idx_teacher_id` (`teacher_id`),
-  ADD KEY `idx_reported_on` (`reported_on`);
-
---
--- Indexes for table `tb_kelas`
+-- Indeks untuk tabel `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_pelanggaran`
+-- Indeks untuk tabel `tb_pelanggaran`
 --
 ALTER TABLE `tb_pelanggaran`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `type_id` (`type_id`),
-  ADD KEY `class_id` (`class_id`),
-  ADD KEY `wali_id` (`wali_id`),
-  ADD KEY `student_id` (`student_id`),
-  ADD KEY `teacher_id` (`teacher_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_siswa`
+-- Indeks untuk tabel `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`nisn`),
   ADD KEY `class_id` (`class_id`);
 
 --
--- Indexes for table `tb_tipe_kebaikan`
+-- Indeks untuk tabel `tb_tipe_kebaikan`
 --
 ALTER TABLE `tb_tipe_kebaikan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_tipe_pelanggaran`
+-- Indeks untuk tabel `tb_tipe_pelanggaran`
 --
 ALTER TABLE `tb_tipe_pelanggaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_users`
+-- Indeks untuk tabel `tb_users`
 --
 ALTER TABLE `tb_users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_wali`
+-- Indeks untuk tabel `tb_wali`
 --
 ALTER TABLE `tb_wali`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `student_id` (`student_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_website`
+-- Indeks untuk tabel `tb_website`
 --
 ALTER TABLE `tb_website`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_guru`
---
-ALTER TABLE `tb_guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `tb_kebaikan`
+-- AUTO_INCREMENT untuk tabel `tb_kebaikan`
 --
 ALTER TABLE `tb_kebaikan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `tb_kelas`
+-- AUTO_INCREMENT untuk tabel `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tb_pelanggaran`
---
-ALTER TABLE `tb_pelanggaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
--- AUTO_INCREMENT for table `tb_siswa`
---
-ALTER TABLE `tb_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `tb_tipe_kebaikan`
---
-ALTER TABLE `tb_tipe_kebaikan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tb_tipe_pelanggaran`
---
-ALTER TABLE `tb_tipe_pelanggaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tb_users`
+-- AUTO_INCREMENT untuk tabel `tb_pelanggaran`
 --
-ALTER TABLE `tb_users`
+ALTER TABLE `tb_pelanggaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_tipe_kebaikan`
+--
+ALTER TABLE `tb_tipe_kebaikan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tb_wali`
+-- AUTO_INCREMENT untuk tabel `tb_tipe_pelanggaran`
 --
-ALTER TABLE `tb_wali`
+ALTER TABLE `tb_tipe_pelanggaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tb_website`
+-- AUTO_INCREMENT untuk tabel `tb_users`
+--
+ALTER TABLE `tb_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_wali`
+--
+ALTER TABLE `tb_wali`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_website`
 --
 ALTER TABLE `tb_website`
   MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `tb_pelanggaran`
+--
+ALTER TABLE `tb_pelanggaran`
+  ADD CONSTRAINT `fk_tb_pelanggaran_tipe` FOREIGN KEY (`tipe_id`) REFERENCES `tb_tipe_pelanggaran` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

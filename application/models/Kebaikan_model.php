@@ -26,7 +26,7 @@ class Kebaikan_model extends CI_Model
 
     public function TopKebaikan()
     {
-        $this->db->select('tb_kebaikan.id, count(tb_kebaikan.id) as total_kebaikan, tb_kebaikan.tipe_id, tb_tipe_kebaikan.violation_name');
+        $this->db->select('tb_kebaikan.id, count(tb_kebaikan.id) as total_kebaikan, tb_kebaikan.tipe_id, tb_tipe_kebaikan.nama_kebaikan');
         $this->db->from($this->table);
         $this->db->join($this->table_join4, $this->join4);
         $this->db->group_by('tb_kebaikan.tipe_id');
@@ -37,7 +37,7 @@ class Kebaikan_model extends CI_Model
 
     public function TopMurid()
     {
-        $this->db->select('SUM(tb_kebaikan.point) as total_poin, count(tb_kebaikan.id) as total_kebaikan, tb_kebaikan.tipe_id, tb_siswa.nama_siswa, tb_siswa.nisn');
+        $this->db->select('SUM(tb_kebaikan.poin) as total_poin, count(tb_kebaikan.id) as total_kebaikan, tb_kebaikan.tipe_id, tb_siswa.nama_siswa, tb_siswa.nisn');
         $this->db->from($this->table);
         $this->db->join($this->table_join5, $this->join5, 'left');
         $this->db->group_by('tb_kebaikan.nisn');
@@ -103,7 +103,7 @@ class Kebaikan_model extends CI_Model
 
     public function CariTotalKebaikanSiswa($id)
     {
-        $this->db->select('SUM(point) AS point');
+        $this->db->select('SUM(poin) AS poin');
         $this->db->from($this->table);
         $this->db->where('nisn', $id);
         $query = $this->db->get();

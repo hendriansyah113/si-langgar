@@ -1087,3 +1087,91 @@ OR  `nama_kebaikan` LIKE '%Wahyu %' ESCAPE '!'
 OR  `tb_kebaikan`.`catatan` LIKE '%Wahyu %' ESCAPE '!'
 OR  `tb_kebaikan`.`tanggal_lapor` LIKE '%Wahyu %' ESCAPE '!'
  )
+ERROR - 2024-12-05 14:03:03 --> Severity: Notice --> Undefined property: Admin::$kebaikan_model C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 24
+ERROR - 2024-12-05 14:03:03 --> Severity: error --> Exception: Call to a member function TopKebaikan() on null C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 24
+ERROR - 2024-12-05 14:03:22 --> Severity: Notice --> Undefined property: Admin::$kebaikan_model C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 24
+ERROR - 2024-12-05 14:03:22 --> Severity: error --> Exception: Call to a member function TopKebaikan() on null C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 24
+ERROR - 2024-12-05 14:05:32 --> Query error: Unknown column 'tb_tipe_kebaikan.violation_name' in 'field list' - Invalid query: SELECT `tb_kebaikan`.`id`, count(tb_kebaikan.id) as total_kebaikan, `tb_kebaikan`.`tipe_id`, `tb_tipe_kebaikan`.`violation_name`
+FROM `tb_kebaikan`
+JOIN `tb_tipe_kebaikan` ON `tb_tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+GROUP BY `tb_kebaikan`.`tipe_id`
+ORDER BY `total_kebaikan` DESC
+ LIMIT 5
+ERROR - 2024-12-05 14:05:55 --> Query error: Unknown column 'tb_kebaikan.point' in 'field list' - Invalid query: SELECT SUM(tb_kebaikan.point) as total_poin, count(tb_kebaikan.id) as total_kebaikan, `tb_kebaikan`.`tipe_id`, `tb_siswa`.`nama_siswa`, `tb_siswa`.`nisn`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+GROUP BY `tb_kebaikan`.`nisn`
+ORDER BY `total_poin` DESC
+ LIMIT 5
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$nama_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 175
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$total_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 176
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$nama_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 175
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$total_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 176
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$nama_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 175
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$total_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 176
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$nama_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 175
+ERROR - 2024-12-05 14:06:08 --> Severity: Notice --> Undefined property: stdClass::$total_kebaikan C:\xampp\htdocs\si-langgar\application\views\admin\dashboard.php 176
+ERROR - 2024-12-05 14:07:06 --> Query error: Unknown column 'nik' in 'where clause' - Invalid query: SELECT *
+FROM `tb_siswa`
+WHERE   (
+`nik` LIKE '%1254%' ESCAPE '!'
+OR  `nama_siswa` LIKE '%1254%' ESCAPE '!'
+OR  `alamat` LIKE '%1254%' ESCAPE '!'
+OR  `nomor_hp` LIKE '%1254%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 14:07:32 --> Query error: Unknown column 'nik' in 'where clause' - Invalid query: SELECT *
+FROM `tb_siswa`
+WHERE   (
+`nik` LIKE '%1254%' ESCAPE '!'
+OR  `nama_siswa` LIKE '%1254%' ESCAPE '!'
+OR  `alamat` LIKE '%1254%' ESCAPE '!'
+OR  `nomor_hp` LIKE '%1254%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 14:08:00 --> Query error: Unknown column 'nik' in 'where clause' - Invalid query: SELECT *
+FROM `tb_siswa`
+WHERE   (
+`nik` LIKE '%2345%' ESCAPE '!'
+OR  `nama_siswa` LIKE '%2345%' ESCAPE '!'
+OR  `alamat` LIKE '%2345%' ESCAPE '!'
+OR  `nomor_hp` LIKE '%2345%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 14:08:07 --> Query error: Unknown column 'nik' in 'where clause' - Invalid query: SELECT *
+FROM `tb_siswa`
+WHERE   (
+`nik` LIKE '%4151%' ESCAPE '!'
+OR  `nama_siswa` LIKE '%4151%' ESCAPE '!'
+OR  `alamat` LIKE '%4151%' ESCAPE '!'
+OR  `nomor_hp` LIKE '%4151%' ESCAPE '!'
+ )
+ERROR - 2024-12-05 14:10:36 --> Severity: Notice --> Undefined property: stdClass::$id C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 89
+ERROR - 2024-12-05 14:10:36 --> Severity: Notice --> Undefined property: stdClass::$nama_kelas C:\xampp\htdocs\si-langgar\application\views\search.php 44
+ERROR - 2024-12-05 14:21:35 --> Severity: error --> Exception: Call to undefined method Siswa_model::TotalDataKebaikanSiswa() C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 119
+ERROR - 2024-12-05 14:22:14 --> Severity: error --> Exception: Call to undefined method Siswa_model::DataKebaikanSiswa() C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 146
+ERROR - 2024-12-05 14:22:49 --> Severity: error --> Exception: Call to undefined method Pelanggaran_model::CariTotalKebaikanSiswa() C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 151
+ERROR - 2024-12-05 14:23:36 --> Query error: Unknown column 'point' in 'field list' - Invalid query: SELECT SUM(point) AS point
+FROM `tb_kebaikan`
+WHERE `nisn` = '1'
+ERROR - 2024-12-05 14:23:54 --> Query error: Unknown column 'point' in 'field list' - Invalid query: SELECT SUM(point) AS poin
+FROM `tb_kebaikan`
+WHERE `nisn` = '1'
+ERROR - 2024-12-05 14:24:13 --> Severity: Notice --> Undefined property: stdClass::$poin C:\xampp\htdocs\si-langgar\application\controllers\Admin.php 151
+ERROR - 2024-12-05 14:24:40 --> Severity: Notice --> Undefined property: stdClass::$nama_kebaikan C:\xampp\htdocs\si-langgar\application\views\search_kebaikan.php 79
+ERROR - 2024-12-05 14:26:41 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:27:29 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:27:32 --> Severity: Notice --> Undefined variable: top_kebaikan C:\xampp\htdocs\si-langgar\application\views\dashboard.php 87
+ERROR - 2024-12-05 14:27:32 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\dashboard.php 87
+ERROR - 2024-12-05 14:27:32 --> Severity: Notice --> Undefined variable: top_murid_kebaikan C:\xampp\htdocs\si-langgar\application\views\dashboard.php 114
+ERROR - 2024-12-05 14:27:32 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\si-langgar\application\views\dashboard.php 114
+ERROR - 2024-12-05 14:35:03 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 14:35:04 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 14:35:04 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 14:38:00 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 14:38:00 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 14:38:01 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 14:40:44 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:43:36 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:43:49 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:44:15 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:46:48 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:46:53 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
+ERROR - 2024-12-05 14:47:01 --> Severity: Notice --> Undefined variable: total_poin C:\xampp\htdocs\si-langgar\application\views\search.php 51
