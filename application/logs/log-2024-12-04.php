@@ -1665,3 +1665,404 @@ LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebai
 WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
 ORDER BY `tb_kebaikan`.`id` DESC
  LIMIT 20
+ERROR - 2024-12-04 18:23:11 --> Query error: Unknown column 'kelas.nama_wali' in 'field list' - Invalid query: SELECT `tb_pelanggaran`.*, `tb_siswa`.`nisn` as `violation_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`nama_wali`, `tipe_pelanggaran`.`nama_pelanggaran`
+FROM `tb_pelanggaran`
+JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_pelanggaran`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_pelanggaran`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_pelanggaran`.`wali_id`
+LEFT JOIN `tb_tipe_pelanggaran` `tipe_pelanggaran` ON `tipe_pelanggaran`.`id` = `tb_pelanggaran`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_pelanggaran`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 18:24:01 --> Query error: Unknown column 'kelas.nama_wali' in 'field list' - Invalid query: SELECT `tb_kebaikan`.*, `tb_siswa`.`nisn` as `kebaikan_id`, `siswa`.`nama_siswa`, `kelas`.`nama_kelas`, `guru`.`nama_guru`, `wali`.`nama_wali`, `kelas`.`nama_wali`, `tipe_kebaikan`.`nama_kebaikan`
+FROM `tb_kebaikan`
+LEFT JOIN `tb_siswa` ON `tb_siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_siswa` `siswa` ON `siswa`.`nisn` = `tb_kebaikan`.`nisn`
+LEFT JOIN `tb_kelas` `kelas` ON `siswa`.`class_id` = `kelas`.`id`
+LEFT JOIN `tb_guru` `guru` ON `guru`.`nik` = `tb_kebaikan`.`nik`
+LEFT JOIN `tb_wali` `wali` ON `wali`.`id` = `tb_kebaikan`.`wali_id`
+LEFT JOIN `tb_tipe_kebaikan` `tipe_kebaikan` ON `tipe_kebaikan`.`id` = `tb_kebaikan`.`tipe_id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_kebaikan`.`id` DESC
+ LIMIT 20
+ERROR - 2024-12-04 18:24:21 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:26:36 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:27:37 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:27:50 --> Severity: Compile Error --> Cannot redeclare Siswa_model::$nisn C:\xampp\htdocs\si-langgar\application\models\Siswa_model.php 18
+ERROR - 2024-12-04 18:28:09 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:28:43 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:34:12 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:34:59 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:35:56 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:36:12 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:42:03 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`nisn` ASC
+ LIMIT 20
+ERROR - 2024-12-04 18:43:00 --> Severity: error --> Exception: Call to undefined method Siswa_model::TotalDataSiswa() C:\xampp\htdocs\si-langgar\application\controllers\Siswa.php 20
+ERROR - 2024-12-04 18:43:25 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:43:44 --> Severity: Notice --> Undefined index: total_rows C:\xampp\htdocs\si-langgar\application\controllers\Siswa.php 23
+ERROR - 2024-12-04 18:43:44 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`nisn` ASC
+ LIMIT 20
+ERROR - 2024-12-04 18:44:35 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:44:51 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:45:04 --> Severity: error --> Exception: Call to undefined method Siswa_model::TotalDataSiswa() C:\xampp\htdocs\si-langgar\application\controllers\Siswa.php 20
+ERROR - 2024-12-04 18:45:27 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:49:20 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`nisn` ASC
+ LIMIT 20
+ERROR - 2024-12-04 18:51:44 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa` `s`
+JOIN `tb_kelas` `k` ON `k`.`id` = `s`.`class_id`
+JOIN `tb_wali` `w` ON `w`.`nisn` = `s`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `s`.`nisn` ASC
+ LIMIT 20
+ERROR - 2024-12-04 18:52:33 --> Severity: error --> Exception: Call to a member function result() on array C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 44
+ERROR - 2024-12-04 18:52:45 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:53:53 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:55:15 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:55:52 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`nisn` ASC
+ LIMIT 20
+ERROR - 2024-12-04 18:56:22 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:56:27 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:56:36 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:56:47 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:57:33 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 18:59:53 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:00:09 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:01:11 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:01:38 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 19:01:54 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 19:02:04 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 19:02:10 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 19:02:22 --> Severity: error --> Exception: Call to a member function result() on null C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 44
+ERROR - 2024-12-04 19:02:44 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:02:45 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:02:52 --> Severity: error --> Exception: Call to a member function result() on null C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 44
+ERROR - 2024-12-04 19:03:10 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 52
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-04 19:03:35 --> Severity: Notice --> Undefined property: stdClass::$full_name C:\xampp\htdocs\si-langgar\application\views\admin\list-pengguna.php 83
+ERROR - 2024-12-04 19:03:39 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:04:56 --> Query error: Unknown column 'tb_wali.student_id' in 'on clause' - Invalid query: SELECT COUNT(*) AS `numrows`
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`student_id` = `tb_siswa`.`id`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ERROR - 2024-12-04 19:05:23 --> Query error: Column 'nisn' in where clause is ambiguous - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 19:05:52 --> Query error: Unknown column 'tb_siswa.id' in 'order clause' - Invalid query: SELECT *
+FROM `tb_siswa`
+JOIN `tb_kelas` ON `tb_kelas`.`id` = `tb_siswa`.`class_id`
+JOIN `tb_wali` ON `tb_wali`.`nisn` = `tb_siswa`.`nisn`
+WHERE `tb_siswa`.`nisn` LIKE '%%' ESCAPE '!'
+ORDER BY `tb_siswa`.`id` ASC
+ LIMIT 20
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 47
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$class_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 48
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$address C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 49
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$parent_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 50
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 81
+ERROR - 2024-12-04 19:06:07 --> Severity: Notice --> Undefined property: stdClass::$std_name C:\xampp\htdocs\si-langgar\application\views\admin\list-siswa.php 82
+ERROR - 2024-12-04 19:08:12 --> Query error: Unknown column 'address' in 'field list' - Invalid query: INSERT INTO `tb_siswa` (`nisn`, `nama_siswa`, `class_id`, `address`, `phone_number`) VALUES ('999999', 'kjkk', '5', 'imimj', '88888888888')
+ERROR - 2024-12-04 19:10:01 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:10:02 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:10:02 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:10:19 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:10:19 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:10:19 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:11:36 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:11:36 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:11:36 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:11:44 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:11:44 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:11:44 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:11:51 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:11:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:11:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:12:17 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:12:17 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:12:17 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:12:55 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:12:55 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:12:55 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:20:12 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:20:12 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:20:12 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:04 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:24:04 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:04 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:17 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:24:17 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:17 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:33 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:24:33 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:33 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:49 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:24:49 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:24:49 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:26:20 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:26:20 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:26:20 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:26:29 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:26:29 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:26:29 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:26:57 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:26:57 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:26:57 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:29:28 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:29:28 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:29:28 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:29:39 --> Query error: Duplicate entry '2147483647' for key 'PRIMARY' - Invalid query: INSERT INTO `tb_siswa` (`nisn`, `nama_siswa`, `class_id`, `alamat`, `nomor_hp`) VALUES ('9999999992', 'jakjs', '1', 'r', '082254098080')
+ERROR - 2024-12-04 19:29:45 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:29:45 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:29:45 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:29:51 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:29:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:29:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:30:16 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:30:16 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:30:16 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:32:51 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:32:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:32:51 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:33:09 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:33:09 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:33:09 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:34:31 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:34:31 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:34:31 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:34:49 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:34:49 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:34:49 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:36:26 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:36:26 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:36:26 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:36:40 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:36:40 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:36:40 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:42:19 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:42:19 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:42:19 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:42:34 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:42:34 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:42:35 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:42:58 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-04 19:42:58 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-04 19:42:58 --> 404 Page Not Found: Assets/js

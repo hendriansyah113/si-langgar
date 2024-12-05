@@ -17,7 +17,7 @@ class Siswa extends MY_Controller
         $keyword = $this->db->escape_str(filter($this->input->get('search', true)));
         $config['per_page'] = 20;  //show record per halaman
         $config['base_url'] = site_url('siswa/index');
-        $config['total_rows'] = $this->Siswa_model->TotalDataSiswa(['nisn' => $keyword]);
+        $config['total_rows'] = $this->Siswa_model->TotalDataSiswa(['tb_siswa.nisn' => $keyword]);
         $per_page = $config['per_page'];
         $config['uri_segment'] = 3;  // uri parameter
         $choice = $config['total_rows'] / $per_page;
@@ -51,7 +51,7 @@ class Siswa extends MY_Controller
 
         $this->pagination->initialize($config);
         $data['uri'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data['list'] = $this->Siswa_model->DataSiswa($config['per_page'], $data['uri'], ['nisn' => $keyword]);
+        $data['list'] = $this->Siswa_model->DataSiswa($config['per_page'], $data['uri'], ['tb_siswa.nisn' => $keyword]);
         $data['page'] = 'List Siswa';
         $data['login'] = $this->data_user();
         $data['total_rows'] = $config['total_rows'];
@@ -156,12 +156,15 @@ class Siswa extends MY_Controller
                         'nisn' => $post_nisn,
                         'nama_siswa' => $post_nama,
                         'class_id' => $row_kelas->id,
-                        'address' => $post_alamat,
-                        'phone_number' => $post_phone
+                        'alamat' => $post_alamat,
+                        'nomor_hp' => $post_phone
                     ];
-                    $insert = $this->Siswa_model->insert_id($data_murid);
-                    if ($insert == true) {
-                        $this->Wali_model->insert(['student_id' => $insert, 'parent_name' => $post_ortu, 'phone_number' => $post_phone]);
+                    $insert = $this->Siswa_model->insert($data_murid);
+                    if ($insert) {
+                        // Ambil nisn yang baru saja dimasukkan
+                        $nisn_terbaru = $post_nisn;
+                        // Insert data wali
+                        $this->Wali_model->insert(['nisn' => $nisn_terbaru, 'nama_wali' => $post_ortu, 'nomor_hp' => $post_phone]);
                         $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil', 'msg' => 'Data Siswa Baru Berhasil Ditambahkan']);
                         redirect('siswa');
                     } else {
@@ -216,14 +219,14 @@ class Siswa extends MY_Controller
 
                 $update = [
                     'nisn' => $post_nisn,
-                    'std_name' => $post_nama,
+                    'nama_siswa' => $post_nama,
                     'class_id' => $row_kelas->id,
-                    'address' => $post_alamat,
-                    'phone_number' => $post_phone
+                    'alamat' => $post_alamat,
+                    'nomor_hp' => $post_phone
                 ];
                 $update = $this->Siswa_model->update($update, $this->db->escape_str(filter($id, true)));
                 if ($update == true) {
-                    $this->Wali_model->update(['student_id' => $id, 'parent_name' => $post_ortu, 'phone_number' => $post_phone], $this->db->escape_str(filter($id, true)));
+                    $this->Wali_model->update(['nisn' => $post_nisn, 'nama_wali' => $post_ortu, 'nomor_hp' => $post_phone], $this->db->escape_str(filter($id, true)));
                     $this->session->set_flashdata('result', ['alert' => 'success', 'title' => 'Berhasil!', 'msg' => 'Data Berhasil Di Ubah.']);
                     redirect('siswa');
                 } else {
@@ -244,7 +247,7 @@ class Siswa extends MY_Controller
     public function hapus()
     {
         if (count($this->input->post())) {
-            $post_id = $this->input->post($this->db->escape_str(filter('id', true)));
+            $post_id = $this->input->post($this->db->escape_str(filter('nisn', true)));
 
             $data_siswa = $this->Siswa_model->getByID($post_id);
             $check_data_pelanggaran = $this->Siswa_model->CheckPelanggaranByID($post_id);

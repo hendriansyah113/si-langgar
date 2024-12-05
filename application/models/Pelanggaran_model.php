@@ -79,7 +79,7 @@ class Pelanggaran_model extends CI_Model
         if ($value <> '') {
             $this->db->like($value);
         }
-        $this->db->select($this->table . '.*, ' . $this->table_join5 . '.nisn as violation_id, siswa.nama_siswa, kelas.nama_kelas, guru.nama_guru, wali.nama_wali, kelas.nama_wali, tipe_pelanggaran.nama_pelanggaran');
+        $this->db->select($this->table . '.*, ' . $this->table_join5 . '.nisn as violation_id, siswa.nama_siswa, kelas.nama_kelas, guru.nama_guru, wali.nama_wali, kelas.wali_kelas, tipe_pelanggaran.nama_pelanggaran');
         $this->db->join($this->table_join5, $this->join5);
         $this->db->join('tb_siswa siswa', 'siswa.nisn = ' . $this->table . '.nisn', 'left');
         $this->db->join('tb_kelas kelas', 'siswa.class_id = kelas.id', 'left');
