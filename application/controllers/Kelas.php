@@ -16,7 +16,17 @@ class Kelas extends MY_Controller
                 $keyword = $this->db->escape_str(filter($this->input->get('search', true)));
                 $config['per_page'] = 20;  //show record per halaman
                 $config['base_url'] = site_url('kelas/index');
-                $config['total_rows'] = $this->Kelas_model->TotalDataKelas(['nama_kelas' => $keyword]);
+                // Buat query pencarian dinamis
+                $search_conditions = [];
+                if (!empty($keyword)) {
+                        $search_conditions = [
+                                'tb_kelas.nama_kelas' => $keyword,
+                                'tb_kelas.wali_kelas' => $keyword,
+                        ];
+                }
+
+                // Hitung total data berdasarkan pencarian
+                $config['total_rows'] = $this->Kelas_model->TotalDataKelas($search_conditions);
                 $per_page = $config['per_page'];
                 $config['uri_segment'] = 3;  // uri parameter
                 $choice = $config['total_rows'] / $per_page;
@@ -50,7 +60,7 @@ class Kelas extends MY_Controller
 
                 $this->pagination->initialize($config);
                 $data['uri'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-                $data['list'] = $this->Kelas_model->DataKelas($config['per_page'], $data['uri'], ['nama_kelas' => $keyword]);
+                $data['list'] = $this->Kelas_model->DataKelas($config['per_page'], $data['uri'], $search_conditions);
                 $data['page'] = 'List Kelas';
                 $data['login'] = $this->data_user();
                 $data['total_rows'] = $config['total_rows'];

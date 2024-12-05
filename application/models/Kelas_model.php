@@ -17,20 +17,29 @@ class Kelas_model extends CI_Model
         parent::__construct();
     }
 
-
-    function TotalDataKelas($value = null)
+    public function TotalDataKelas($conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start(); // Mulai grup untuk kondisi pencarian
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value); // Tambahkan kondisi LIKE
+            }
+            $this->db->group_end(); // Tutup grup
         }
+
         $this->db->from($this->table);
-        return $this->db->count_all_results();
+        $query = $this->db->count_all_results();
+        return $query;
     }
 
-    function DataKelas($limit, $start, $value = null)
+    public function DataKelas($limit, $start, $conditions = [])
     {
-        if ($value <> '') {
-            $this->db->like($value);
+        if (!empty($conditions)) {
+            $this->db->group_start();
+            foreach ($conditions as $field => $value) {
+                $this->db->or_like($field, $value);
+            }
+            $this->db->group_end();
         }
         $this->db->limit($limit, $start);
         $this->db->from($this->table);

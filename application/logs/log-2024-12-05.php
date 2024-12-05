@@ -933,3 +933,14 @@ WHERE   (
 OR  `tb_siswa`.`nama_siswa` LIKE '%XII-TKJ-1%' ESCAPE '!'
 OR  `tb_kelas`.`nama_kelas` LIKE '%XII-TKJ-1%' ESCAPE '!'
  )
+ERROR - 2024-12-05 13:18:02 --> Severity: Notice --> Undefined property: Kelas::$Siswa_model C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 29
+ERROR - 2024-12-05 13:18:02 --> Severity: error --> Exception: Call to a member function TotalDataKelas() on null C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 29
+ERROR - 2024-12-05 13:18:29 --> Severity: Notice --> Undefined property: Kelas::$Siswa_model C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 29
+ERROR - 2024-12-05 13:18:29 --> Severity: error --> Exception: Call to a member function TotalDataKelas() on null C:\xampp\htdocs\si-langgar\application\controllers\Kelas.php 29
+ERROR - 2024-12-05 13:19:16 --> Severity: Notice --> Undefined property: Kelas::$id_siswa C:\xampp\htdocs\si-langgar\system\core\Model.php 73
+ERROR - 2024-12-05 13:19:22 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 13:19:23 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 13:19:23 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 13:20:10 --> 404 Page Not Found: Assets/css
+ERROR - 2024-12-05 13:20:11 --> 404 Page Not Found: Assets/js
+ERROR - 2024-12-05 13:20:11 --> 404 Page Not Found: Assets/js
