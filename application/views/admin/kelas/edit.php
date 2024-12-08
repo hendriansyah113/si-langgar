@@ -33,9 +33,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="form-group">
             <label class="control-label">Wali Kelas</label>
             <select name="wali_kelas" class="form-control select2" style="width: 100%;">
-              <option value="<?php echo $kelas->id ?>"><?php echo $kelas->wali_kelas ?></option>
+              <option value="<?php echo $kelas->wali_kelas ?>"><?php echo $kelas->wali_kelas ?></option>
               <?php foreach ($guru as $row) : ?>
-                <option value="<?php echo $row->nik ?>"><?php echo $row->nama_guru ?></option>
+                <option value="<?php echo $row->nama_guru ?>"><?php echo $row->nama_guru ?></option>
               <?php endforeach; ?>
             </select>
           </div>

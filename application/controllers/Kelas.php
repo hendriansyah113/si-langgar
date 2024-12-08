@@ -146,7 +146,7 @@ class Kelas extends MY_Controller
                                 $row_guru = $data_guru->row();
 
                                 $update_post = [
-                                        'wali_kelas' => $row_guru->nama_guru,
+                                        'wali_kelas' => $post_wali_kelas,
                                         'nama_kelas' => $post_nama_kelas,
                                         'sub_class' => $post_kelas,
                                         'total_siswa' => $post_total_siswa
